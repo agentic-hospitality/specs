@@ -195,7 +195,7 @@ The specs define WHAT hospitality commerce means. Protocols define HOW it moves.
 
 ### UCP integration
 
-Google's [Universal Commerce Protocol](https://ucp.dev) launched January 2026 as an orchestration layer for agentic commerce. We're proposing these specs as a hospitality vertical:
+Google's [Universal Commerce Protocol](https://ucp.dev) launched January 2026 as an orchestration layer for agentic commerce. We're proposing these specs as a hospitality vertical. This is one binding, not the only one.:
 
 | Our spec | UCP capability |
 |----------|----------------|
@@ -204,8 +204,6 @@ Google's [Universal Commerce Protocol](https://ucp.dev) launched January 2026 as
 | Stay | `dev.ucp.hospitality.stay` |
 
 See [UCP Integration](/docs/ucp-integration.md) for details.
-
-This is one binding, not the only one.
 
 ---
 
