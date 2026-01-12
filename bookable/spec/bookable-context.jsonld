@@ -1,0 +1,196 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "bookable": "https://open-hospitality.org/bookable/v0.1#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    
+    "identity": {
+      "@id": "bookable:identity",
+      "@type": "@json"
+    },
+    
+    "evidence": {
+      "@id": "bookable:evidence",
+      "@type": "@json"
+    },
+    
+    "fit": {
+      "@id": "bookable:fit",
+      "@type": "@json"
+    },
+    
+    "actions": {
+      "@id": "bookable:actions",
+      "@type": "@json"
+    },
+    
+    "presentation": {
+      "@id": "bookable:presentation",
+      "@type": "@json"
+    },
+    
+    "answers": {
+      "@id": "bookable:answers",
+      "@type": "@json"
+    },
+    
+    "name": {
+      "@id": "bookable:name",
+      "@type": "xsd:string"
+    },
+    
+    "domain": {
+      "@id": "bookable:domain",
+      "@type": "xsd:string"
+    },
+    
+    "did": {
+      "@id": "bookable:did",
+      "@type": "xsd:string"
+    },
+    
+    "location": {
+      "@id": "bookable:location",
+      "@type": "@json"
+    },
+    
+    "coordinates": {
+      "@id": "bookable:coordinates",
+      "@type": "@json"
+    },
+    
+    "claim": {
+      "@id": "bookable:claim",
+      "@type": "xsd:string"
+    },
+    
+    "confidence": {
+      "@id": "bookable:confidence",
+      "@type": "xsd:decimal"
+    },
+    
+    "convergence": {
+      "@id": "bookable:convergence",
+      "@type": "xsd:string"
+    },
+    
+    "sources": {
+      "@id": "bookable:sources",
+      "@type": "@json"
+    },
+    
+    "lastVerified": {
+      "@id": "bookable:lastVerified",
+      "@type": "xsd:dateTime"
+    },
+    
+    "strong": {
+      "@id": "bookable:strong",
+      "@type": "@json"
+    },
+    
+    "weak": {
+      "@id": "bookable:weak",
+      "@type": "@json"
+    },
+    
+    "intent": {
+      "@id": "bookable:intent",
+      "@type": "xsd:string"
+    },
+    
+    "reason": {
+      "@id": "bookable:reason",
+      "@type": "xsd:string"
+    },
+    
+    "signals": {
+      "@id": "bookable:signals",
+      "@type": "@json"
+    },
+    
+    "capabilities": {
+      "@id": "bookable:capabilities",
+      "@type": "@json"
+    },
+    
+    "endpoint": {
+      "@id": "bookable:endpoint",
+      "@type": "xsd:anyURI"
+    },
+    
+    "protocol": {
+      "@id": "bookable:protocol",
+      "@type": "xsd:string"
+    },
+    
+    "question": {
+      "@id": "bookable:question",
+      "@type": "xsd:string"
+    },
+    
+    "answer": {
+      "@id": "bookable:answer",
+      "@type": "xsd:string"
+    },
+    
+    "basedOn": {
+      "@id": "bookable:basedOn",
+      "@type": "@json"
+    },
+    
+    "citations": {
+      "@id": "bookable:citations",
+      "@type": "@json"
+    },
+    
+    "Source": {
+      "@id": "bookable:Source",
+      "@context": {
+        "type": {
+          "@id": "bookable:sourceType",
+          "@type": "xsd:string"
+        },
+        "sourceRef": {
+          "@id": "bookable:sourceRef",
+          "@type": "xsd:string"
+        },
+        "method": {
+          "@id": "bookable:method",
+          "@type": "xsd:string"
+        },
+        "capturedAt": {
+          "@id": "bookable:capturedAt",
+          "@type": "xsd:dateTime"
+        },
+        "capturedBy": {
+          "@id": "bookable:capturedBy",
+          "@type": "xsd:string"
+        },
+        "verification": {
+          "@id": "bookable:verification",
+          "@type": "@json"
+        }
+      }
+    },
+    
+    "Verification": {
+      "@id": "bookable:Verification",
+      "@context": {
+        "status": {
+          "@id": "bookable:verificationStatus",
+          "@type": "xsd:string"
+        },
+        "verifiedBy": {
+          "@id": "bookable:verifiedBy",
+          "@type": "xsd:string"
+        },
+        "verifiedAt": {
+          "@id": "bookable:verifiedAt",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

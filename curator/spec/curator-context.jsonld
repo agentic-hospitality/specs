@@ -1,0 +1,265 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "curator": "https://selfe.ai/protocols/curator/v0.2#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    
+    "identity": {
+      "@id": "curator:identity",
+      "@type": "@json"
+    },
+    
+    "coverage": {
+      "@id": "curator:coverage",
+      "@type": "@json"
+    },
+    
+    "stories": {
+      "@id": "curator:stories",
+      "@type": "@json"
+    },
+    
+    "verification": {
+      "@id": "curator:verification",
+      "@type": "@json"
+    },
+    
+    "actions": {
+      "@id": "curator:actions",
+      "@type": "@json"
+    },
+    
+    "evidence": {
+      "@id": "curator:evidence",
+      "@type": "@json"
+    },
+    
+    "transparency": {
+      "@id": "curator:transparency",
+      "@type": "@json"
+    },
+    
+    "presentation": {
+      "@id": "curator:presentation",
+      "@type": "@json"
+    },
+    
+    "curatorType": {
+      "@id": "curator:curatorType",
+      "@type": "xsd:string"
+    },
+    
+    "established": {
+      "@id": "curator:established",
+      "@type": "xsd:gYear"
+    },
+    
+    "jurisdiction": {
+      "@id": "curator:jurisdiction",
+      "@type": "xsd:string"
+    },
+    
+    "geographic": {
+      "@id": "curator:geographic",
+      "@type": "@json"
+    },
+    
+    "regions": {
+      "@id": "curator:regions",
+      "@type": "@json"
+    },
+    
+    "bounds": {
+      "@id": "curator:bounds",
+      "@type": "@json"
+    },
+    
+    "venueTypes": {
+      "@id": "curator:venueTypes",
+      "@type": "@json"
+    },
+    
+    "totalVenues": {
+      "@id": "curator:totalVenues",
+      "@type": "xsd:integer"
+    },
+    
+    "certifiedVenues": {
+      "@id": "curator:certifiedVenues",
+      "@type": "xsd:integer"
+    },
+    
+    "storiesPublished": {
+      "@id": "curator:storiesPublished",
+      "@type": "xsd:integer"
+    },
+    
+    "narrativeDensity": {
+      "@id": "curator:narrativeDensity",
+      "@type": "xsd:decimal"
+    },
+    
+    "lastUpdated": {
+      "@id": "curator:lastUpdated",
+      "@type": "xsd:dateTime"
+    },
+    
+    "Story": {
+      "@id": "curator:Story",
+      "@context": {
+        "id": {
+          "@id": "curator:storyId",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "curator:storyType",
+          "@type": "xsd:string"
+        },
+        "created": {
+          "@id": "curator:storyCreated",
+          "@type": "xsd:dateTime"
+        },
+        "updated": {
+          "@id": "curator:storyUpdated",
+          "@type": "xsd:dateTime"
+        },
+        "about": {
+          "@id": "curator:about",
+          "@type": "@json"
+        },
+        "createdBy": {
+          "@id": "curator:createdBy",
+          "@type": "@json"
+        },
+        "content": {
+          "@id": "curator:content",
+          "@type": "@json"
+        },
+        "editorialWeight": {
+          "@id": "curator:editorialWeight",
+          "@type": "@json"
+        }
+      }
+    },
+    
+    "headline": {
+      "@id": "curator:headline",
+      "@type": "xsd:string"
+    },
+    
+    "summary": {
+      "@id": "curator:summary",
+      "@type": "xsd:string"
+    },
+    
+    "narrative": {
+      "@id": "curator:narrative",
+      "@type": "xsd:string"
+    },
+    
+    "quotes": {
+      "@id": "curator:quotes",
+      "@type": "@json"
+    },
+    
+    "localContext": {
+      "@id": "curator:localContext",
+      "@type": "xsd:string"
+    },
+    
+    "insiderTip": {
+      "@id": "curator:insiderTip",
+      "@type": "xsd:string"
+    },
+    
+    "bestFor": {
+      "@id": "curator:bestFor",
+      "@type": "@json"
+    },
+    
+    "Quote": {
+      "@id": "curator:Quote",
+      "@context": {
+        "text": {
+          "@id": "curator:quoteText",
+          "@type": "xsd:string"
+        },
+        "attribution": {
+          "@id": "curator:attribution",
+          "@type": "xsd:string"
+        },
+        "role": {
+          "@id": "curator:role",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    
+    "EditorialWeight": {
+      "@id": "curator:EditorialWeight",
+      "@context": {
+        "depth": {
+          "@id": "curator:depth",
+          "@type": "xsd:string"
+        },
+        "confidence": {
+          "@id": "curator:confidence",
+          "@type": "xsd:string"
+        },
+        "basis": {
+          "@id": "curator:basis",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    
+    "canCertify": {
+      "@id": "curator:canCertify",
+      "@type": "xsd:boolean"
+    },
+    
+    "certificationLevels": {
+      "@id": "curator:certificationLevels",
+      "@type": "@json"
+    },
+    
+    "verificationMethods": {
+      "@id": "curator:verificationMethods",
+      "@type": "@json"
+    },
+    
+    "economicRelationship": {
+      "@id": "curator:economicRelationship",
+      "@type": "xsd:string"
+    },
+    
+    "revenueModel": {
+      "@id": "curator:revenueModel",
+      "@type": "xsd:string"
+    },
+    
+    "rankingDisclosure": {
+      "@id": "curator:rankingDisclosure",
+      "@type": "xsd:string"
+    },
+    
+    "Certification": {
+      "@id": "curator:Certification",
+      "@context": {
+        "curatorId": {
+          "@id": "curator:certifyingCuratorId",
+          "@type": "xsd:string"
+        },
+        "certificationLevel": {
+          "@id": "curator:certificationLevel",
+          "@type": "xsd:string"
+        },
+        "certifiedAt": {
+          "@id": "curator:certifiedAt",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://open-hospitality.org/bookable/v0.1/context.jsonld",
+    "venueCard": "https://open-hospitality.org/venueCard/v0.1#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    
+    "vibe": {
+      "@id": "venueCard:vibe",
+      "@type": "@json"
+    },
+    
+    "attributes": {
+      "@id": "venueCard:attributes",
+      "@type": "@json"
+    },
+    
+    "units": {
+      "@id": "venueCard:units",
+      "@type": "@json"
+    },
+    
+    "neighbourhood": {
+      "@id": "venueCard:neighbourhood",
+      "@type": "@json"
+    },
+    
+    "essence": {
+      "@id": "venueCard:essence",
+      "@type": "xsd:string"
+    },
+    
+    "character": {
+      "@id": "venueCard:character",
+      "@type": "@json"
+    },
+    
+    "atmosphere": {
+      "@id": "venueCard:atmosphere",
+      "@type": "@json"
+    },
+    
+    "energy": {
+      "@id": "venueCard:energy",
+      "@type": "xsd:string"
+    },
+    
+    "formality": {
+      "@id": "venueCard:formality",
+      "@type": "xsd:string"
+    },
+    
+    "crowd": {
+      "@id": "venueCard:crowd",
+      "@type": "xsd:string"
+    },
+    
+    "pace": {
+      "@id": "venueCard:pace",
+      "@type": "xsd:string"
+    },
+    
+    "accommodation": {
+      "@id": "venueCard:accommodation",
+      "@type": "@json"
+    },
+    
+    "dining": {
+      "@id": "venueCard:dining",
+      "@type": "@json"
+    },
+    
+    "facilities": {
+      "@id": "venueCard:facilities",
+      "@type": "@json"
+    },
+    
+    "accessibility": {
+      "@id": "venueCard:accessibility",
+      "@type": "@json"
+    },
+    
+    "policies": {
+      "@id": "venueCard:policies",
+      "@type": "@json"
+    },
+    
+    "totalRooms": {
+      "@id": "venueCard:totalRooms",
+      "@type": "xsd:integer"
+    },
+    
+    "roomTypes": {
+      "@id": "venueCard:roomTypes",
+      "@type": "@json"
+    },
+    
+    "checkIn": {
+      "@id": "venueCard:checkIn",
+      "@type": "xsd:time"
+    },
+    
+    "checkOut": {
+      "@id": "venueCard:checkOut",
+      "@type": "xsd:time"
+    },
+    
+    "parking": {
+      "@id": "venueCard:parking",
+      "@type": "@json"
+    },
+    
+    "wifi": {
+      "@id": "venueCard:wifi",
+      "@type": "@json"
+    },
+    
+    "pets": {
+      "@id": "venueCard:pets",
+      "@type": "@json"
+    },
+    
+    "wheelchairAccess": {
+      "@id": "venueCard:wheelchairAccess",
+      "@type": "xsd:boolean"
+    },
+    
+    "accessibleRooms": {
+      "@id": "venueCard:accessibleRooms",
+      "@type": "xsd:integer"
+    },
+    
+    "Unit": {
+      "@id": "venueCard:Unit",
+      "@context": {
+        "id": {
+          "@id": "venueCard:unitId",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "venueCard:unitType",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "venueCard:unitName",
+          "@type": "xsd:string"
+        },
+        "maxOccupancy": {
+          "@id": "venueCard:maxOccupancy",
+          "@type": "@json"
+        },
+        "beds": {
+          "@id": "venueCard:beds",
+          "@type": "@json"
+        },
+        "pricing": {
+          "@id": "venueCard:pricing",
+          "@type": "@json"
+        }
+      }
+    },
+    
+    "setting": {
+      "@id": "venueCard:setting",
+      "@type": "xsd:string"
+    },
+    
+    "walkability": {
+      "@id": "venueCard:walkability",
+      "@type": "xsd:decimal"
+    },
+    
+    "proximity": {
+      "@id": "venueCard:proximity",
+      "@type": "@json"
+    },
+    
+    "region": {
+      "@id": "venueCard:region",
+      "@type": "@json"
+    },
+    
+    "Proximity": {
+      "@id": "venueCard:Proximity",
+      "@context": {
+        "name": {
+          "@id": "venueCard:proximityName",
+          "@type": "xsd:string"
+        },
+        "type": {
+          "@id": "venueCard:proximityType",
+          "@type": "xsd:string"
+        },
+        "distance": {
+          "@id": "venueCard:distance",
+          "@type": "@json"
+        },
+        "travelTime": {
+          "@id": "venueCard:travelTime",
+          "@type": "@json"
+        },
+        "relevance": {
+          "@id": "venueCard:relevance",
+          "@type": "@json"
+        }
+      }
+    },
+    
+    "venueType": {
+      "@id": "venueCard:venueType",
+      "@type": "xsd:string"
+    },
+    
+    "extends": {
+      "@id": "venueCard:extends",
+      "@type": "xsd:string"
+    }
+  }
+}

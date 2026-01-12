@@ -1,0 +1,242 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "paymentContract": "https://open-hospitality.org/paymentContract/v0.1#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    
+    "hospitality_item": {
+      "@id": "paymentContract:hospitality_item",
+      "@type": "@json"
+    },
+    
+    "hospitality_constraints": {
+      "@id": "paymentContract:hospitality_constraints",
+      "@type": "@json"
+    },
+    
+    "payment_schedule": {
+      "@id": "paymentContract:payment_schedule",
+      "@type": "@json"
+    },
+    
+    "payment_agreement": {
+      "@id": "paymentContract:payment_agreement",
+      "@type": "@json"
+    },
+    
+    "payment_agreement_authority": {
+      "@id": "paymentContract:payment_agreement_authority",
+      "@type": "@json"
+    },
+    
+    "cancellation_terms": {
+      "@id": "paymentContract:cancellation_terms",
+      "@type": "@json"
+    },
+    
+    "modification_terms": {
+      "@id": "paymentContract:modification_terms",
+      "@type": "@json"
+    },
+    
+    "incidentals_authority": {
+      "@id": "paymentContract:incidentals_authority",
+      "@type": "@json"
+    },
+    
+    "booking_terms": {
+      "@id": "paymentContract:booking_terms",
+      "@type": "@json"
+    },
+    
+    "policy_snapshot": {
+      "@id": "paymentContract:policy_snapshot",
+      "@type": "@json"
+    },
+    
+    "payment_signals": {
+      "@id": "paymentContract:payment_signals",
+      "@type": "@json"
+    },
+    
+    "venue_ref": {
+      "@id": "paymentContract:venue_ref",
+      "@type": "@json"
+    },
+    
+    "validity_window": {
+      "@id": "paymentContract:validity_window",
+      "@type": "@json"
+    },
+    
+    "revocation_conditions": {
+      "@id": "paymentContract:revocation_conditions",
+      "@type": "@json"
+    },
+    
+    "payment_method_storage": {
+      "@id": "paymentContract:payment_method_storage",
+      "@type": "@json"
+    },
+    
+    "policies": {
+      "@id": "paymentContract:policies",
+      "@type": "@json"
+    },
+    
+    "booking_type": {
+      "@id": "paymentContract:booking_type",
+      "@type": "xsd:string"
+    },
+    
+    "check_in": {
+      "@id": "paymentContract:check_in",
+      "@type": "xsd:date"
+    },
+    
+    "check_out": {
+      "@id": "paymentContract:check_out",
+      "@type": "xsd:date"
+    },
+    
+    "room_nights": {
+      "@id": "paymentContract:room_nights",
+      "@type": "xsd:integer"
+    },
+    
+    "rate_type": {
+      "@id": "paymentContract:rate_type",
+      "@type": "xsd:string"
+    },
+    
+    "refund_currency_basis": {
+      "@id": "paymentContract:refund_currency_basis",
+      "@type": "xsd:string"
+    },
+    
+    "proof_method": {
+      "@id": "paymentContract:proof_method",
+      "@type": "xsd:string"
+    },
+    
+    "max_variance_percent": {
+      "@id": "paymentContract:max_variance_percent",
+      "@type": "xsd:decimal"
+    },
+    
+    "requires_mandate_amendment": {
+      "@id": "paymentContract:requires_mandate_amendment",
+      "@type": "xsd:boolean"
+    },
+    
+    "requires_mandate_amendment_if_increase": {
+      "@id": "paymentContract:requires_mandate_amendment_if_increase",
+      "@type": "xsd:boolean"
+    },
+    
+    "liability_increases_require_re_signature": {
+      "@id": "paymentContract:liability_increases_require_re_signature",
+      "@type": "xsd:boolean"
+    },
+    
+    "valid_from": {
+      "@id": "paymentContract:valid_from",
+      "@type": "xsd:dateTime"
+    },
+    
+    "valid_until": {
+      "@id": "paymentContract:valid_until",
+      "@type": "xsd:dateTime"
+    },
+    
+    "auto_capture_at": {
+      "@id": "paymentContract:auto_capture_at",
+      "@type": "xsd:dateTime"
+    },
+    
+    "detection_time": {
+      "@id": "paymentContract:detection_time",
+      "@type": "xsd:dateTime"
+    },
+    
+    "snapshot_timestamp": {
+      "@id": "paymentContract:snapshot_timestamp",
+      "@type": "xsd:dateTime"
+    },
+    
+    "echo_id": {
+      "@id": "paymentContract:echo_id",
+      "@type": "xsd:string"
+    },
+    
+    "echo_version": {
+      "@id": "paymentContract:echo_version",
+      "@type": "xsd:string"
+    },
+    
+    "cancellation_terms_hash": {
+      "@id": "paymentContract:cancellation_terms_hash",
+      "@type": "xsd:string"
+    },
+    
+    "modification_terms_hash": {
+      "@id": "paymentContract:modification_terms_hash",
+      "@type": "xsd:string"
+    },
+    
+    "Amount": {
+      "@id": "paymentContract:Amount",
+      "@context": {
+        "amount": {
+          "@id": "paymentContract:amount",
+          "@type": "xsd:integer"
+        },
+        "currency": {
+          "@id": "paymentContract:currency",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    
+    "CancellationTier": {
+      "@id": "paymentContract:CancellationTier",
+      "@context": {
+        "until": {
+          "@id": "paymentContract:until",
+          "@type": "xsd:dateTime"
+        },
+        "after": {
+          "@id": "paymentContract:after",
+          "@type": "xsd:dateTime"
+        },
+        "refund_percent": {
+          "@id": "paymentContract:refund_percent",
+          "@type": "xsd:decimal"
+        },
+        "description": {
+          "@id": "paymentContract:description",
+          "@type": "xsd:string"
+        }
+      }
+    },
+    
+    "NoShowTerms": {
+      "@id": "paymentContract:NoShowTerms",
+      "@context": {
+        "detection_time": {
+          "@id": "paymentContract:detection_time",
+          "@type": "xsd:dateTime"
+        },
+        "charge_percent": {
+          "@id": "paymentContract:charge_percent",
+          "@type": "xsd:decimal"
+        },
+        "proof_method": {
+          "@id": "paymentContract:proof_method",
+          "@type": "xsd:string"
+        }
+      }
+    }
+  }
+}
