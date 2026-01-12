@@ -96,9 +96,9 @@ Actions    →  What can be done
 
 ## For payment integration: Using Booking Terms
 
-Booking Terms extends UCP checkout with hospitality payment semantics.
+Folio extends UCP checkout with hospitality payment semantics.
 
-1. **Read the [Booking Terms spec](/booking-terms)**
+1. **Read the [Folio spec](/folio)**
 2. **Implement AP2 mandate signing** with booking terms extensions
 3. **Handle payment schedules** (deposits, balance, cancellation)
 
