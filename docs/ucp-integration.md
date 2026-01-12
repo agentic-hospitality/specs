@@ -177,7 +177,7 @@ UCP's `checkout` handles immediate payment. Hospitality needs:
 - No-show policies
 - Modification rules
 
-Booking Terms defines these semantics. Within UCP, they augment checkout.
+Folio defines these semantics. Within UCP, they augment checkout.
 
 ### Stay lifecycle
 
