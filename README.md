@@ -4,7 +4,7 @@ Domain semantics for AI agent discovery and booking in hospitality. Defines venu
 
 ---
 
-## The shift
+## The New Opportunity
 
 In 2026, finding places to eat, drink, stay or play starts with a question, not a search.
 
