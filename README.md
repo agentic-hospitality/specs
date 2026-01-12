@@ -14,14 +14,6 @@ For an AI agent to answer that well, it needs structured ways to discover venues
 
 ---
 
-## Non-goal
-
-These specifications do not define a universal commerce protocol or mandate any single commerce orchestration layer. They exist to define hospitality meaning and obligations that can be expressed over multiple present or future agent commerce systems.
-
-Commerce protocols will come and go. Hospitality semantics change slowly. Discovery, trust, and fit are upstream of checkout. Agents need meaning before money.
-
----
-
 ## The specs
 
 ### Curator
