@@ -474,6 +474,6 @@ DMO verification adds trust. Multiple Curators = higher confidence.
 ## Related
 
 - [Bookable](/bookable): Base pattern Venue inherits from
-- [Booking Terms](/booking-terms): Payment semantics
+- [Folio](/folio): Payment semantics
 - [Stay](/stay): Lifecycle states
 - [Curator](/curator): Discovery and verification
