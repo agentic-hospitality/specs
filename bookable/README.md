@@ -377,6 +377,6 @@ Agents can interact with any Bookable without knowing its specific type. The bas
 ## Related
 
 - [Venue](/venue): Hospitality extension
-- [Booking Terms](/booking-terms): Payment protocol for Bookables
+- [Folio](/folio): Payment protocol for Bookables
 - [Curator](/curator): Authority curation of Bookables
 - [Identity and Trust](/docs/identity-and-trust.md): DIDs, VCs, and authority hierarchy
