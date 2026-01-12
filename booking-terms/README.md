@@ -20,10 +20,10 @@ Booking Terms defines:
 
 These terms can be carried over:
 
-- AP2 mandates
-- UCP payment handlers
-- Direct PSP authorizations
-- Future agent payment protocols
+Payment authorization systems
+Commerce orchestration layers
+Direct PSP integrations
+However you process payments
 
 Same semantics, many carriers.
 
