@@ -14,6 +14,18 @@ For an AI agent to answer that well, it needs structured ways to discover venues
 
 ---
 
+## Scope
+
+These specs define hospitality semantics — what venues are, what bookings mean, how trust works.
+
+They do not define:
+- Payment processing
+- Agent behaviour
+- Discovery infrastructure
+- Rendering
+
+---
+
 ## The specs
 
 ### Curator
@@ -65,11 +77,9 @@ Venue
 
 ---
 
-### Booking Terms
+### Folio
 
-Hospitality booking obligations and lifecycle semantics.
-
-Booking Terms defines what hospitality transactions mean, independent of how those obligations are executed or paid for.
+The guest account. What's owed, what's paid, what happens if plans change.
 
 Hospitality isn't instant commerce. A booking is an agreement about the future:
 
@@ -79,7 +89,7 @@ Hospitality isn't instant commerce. A booking is an agreement about the future:
 - Fee if modified
 
 ```
-Booking Terms
+Folio
 ├── Payment schedule    Deposit, balance, timing
 ├── Cancellation        Refund tiers by days before
 ├── No-show policy      When and how much
@@ -87,15 +97,7 @@ Booking Terms
 └── Mandate             Proof of agreement
 ```
 
-These terms can be carried over:
-- Payment authorization systems
-- Commerce orchestration layers  
-- Direct PSP integrations
-- However you process payments
-
-Same semantics, many carriers.
-
-**[→ Booking Terms specification](/booking-terms)**
+**[→ Folio specification](/folio)**
 
 ---
 
@@ -154,7 +156,7 @@ Could apply beyond hospitality.
                             ▼
               ┌───────────────────────┐
               │        VENUE          │
-              │   + Booking Terms     │
+              │   + Folio     │
               │   + Stay lifecycle    │
               └───────────────────────┘
 ```
@@ -173,7 +175,7 @@ Each layer speaks only to what it can credibly claim:
 |-------|------------|-----------------|
 | **Venue** | The venue | "This is who I am" |
 | **Curator** | The authority | "This is what I know about them" |
-| **Booking Terms** | The transaction | "This is what was agreed" |
+| **Folio** | The transaction | "This is what was agreed" |
 
 Venues don't claim authority. Authorities don't claim to be venues. This separation is load-bearing.
 
@@ -195,15 +197,17 @@ The specs define WHAT hospitality commerce means. Protocols define HOW it moves.
 
 ### UCP integration
 
-Google's [Universal Commerce Protocol](https://ucp.dev) launched January 2026 as an orchestration layer for agentic commerce. We're proposing these specs as a hospitality vertical. This is one binding, not the only one.:
+Google's [Universal Commerce Protocol](https://ucp.dev) launched January 2026 as an orchestration layer for agentic commerce. We're proposing these specs as a hospitality vertical:
 
 | Our spec | UCP capability |
 |----------|----------------|
 | Venue | `dev.ucp.hospitality.venue` |
-| Booking Terms | `dev.ucp.hospitality.booking_terms` |
+| Folio | `dev.ucp.hospitality.folio` |
 | Stay | `dev.ucp.hospitality.stay` |
 
 See [UCP Integration](/docs/ucp-integration.md) for details.
+
+This is one binding, not the only one.
 
 ---
 
@@ -216,7 +220,7 @@ See [UCP Integration](/docs/ucp-integration.md) for details.
 → Start with [Curator](/curator)
 
 **If you're integrating payments**:
-→ Start with [Booking Terms](/booking-terms)
+→ Start with [Folio](/folio)
 
 **If you're building agent tooling**:
 → Start with [Bookable](/bookable)
@@ -243,7 +247,7 @@ See [UCP Integration](/docs/ucp-integration.md) for details.
 │   ├── README.md
 │   └── /spec
 │
-├── /booking-terms               # Payment semantics
+├── /folio                       # Guest account / payment semantics
 │   ├── README.md
 │   └── /spec
 │
@@ -268,7 +272,7 @@ See [UCP Integration](/docs/ucp-integration.md) for details.
 |------|---------|--------|
 | Curator | 0.2.0 | Draft |
 | Venue | 0.1.0 | Draft |
-| Booking Terms | 0.1.0 | Draft |
+| Folio | 0.1.0 | Draft |
 | Stay | 0.1.0 | Draft |
 | Bookable | 0.1.0 | Draft |
 
@@ -286,16 +290,17 @@ We're not precious about this. If something doesn't work, say so.
 
 ---
 
+## About
+
+Built by [Selfe](https://selfe.ai). We use these specs in production.
+
+Questions? [Open an issue](https://github.com/agentic-hospitality/spec/issues) or [email us](mailto:hello@selfe.ai).
+
+---
+
 <p align="center">
   <br />
   <em>Domain semantics for agentic hospitality</em>
   <br /><br />
   <a href="./docs/getting-started.md">Get Started</a> · <a href="./docs/roadmap.md">Roadmap</a> · <a href="./CONTRIBUTING.md">Contribute</a>
 </p>
-
-
-## About
-
-Developed by [Selfe](https://selfe.ai) as part of the Agentic Norfolk project, supported by Innovate UK.
-
-If you're implementing these specs and need help, [get in touch](mailto:hello@selfe.ai).
