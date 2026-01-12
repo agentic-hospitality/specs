@@ -19,7 +19,7 @@ UCP Core                   Orchestration, Payment, Transport
 | A DMO or authority wanting to curate venues | [Curator](/curator) |
 | A venue wanting to be AI-bookable | [Venue](/venue) |
 | A developer building agent tooling | [Bookable](/bookable) |
-| Integrating payments for bookings | [Booking Terms](/booking-terms) |
+| Integrating payments for bookings | [Folio](/folio) |
 | Integrating with UCP | [UCP Integration](/docs/ucp-integration.md) |
 
 ---
