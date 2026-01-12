@@ -8,7 +8,7 @@
 
 AI is changing how people discover and book travel.
 
-When someone asks ChatGPT, Claude, or Google's AI "Where should I stay in Norfolk?", they don't get a list of ten options to compare. They get **one answer**. Maybe two.
+When someone asks ChatGPT, Claude, or Google's AI "Where should I stay in Norfolk where the locals go with great food?", they don't get a list of ten options to compare. They get **one answer**. Maybe two.
 
 AI doesn't browse. It doesn't compare. It **chooses**.
 
@@ -60,7 +60,6 @@ AI agents can query you directly: "Where should I stay near the Norfolk coast?" 
 
 ## Why This Matters Now
 
-The window is open but closing.
 
 Right now, AI agents are learning who to trust. The organisations that establish themselves as authoritative sources early will be the ones AI consults by default.
 
