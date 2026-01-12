@@ -292,3 +292,10 @@ We're not precious about this. If something doesn't work, say so.
   <br /><br />
   <a href="./docs/getting-started.md">Get Started</a> · <a href="./docs/roadmap.md">Roadmap</a> · <a href="./CONTRIBUTING.md">Contribute</a>
 </p>
+
+
+## About
+
+Developed by [Selfe](https://selfe.ai) as part of the Agentic Norfolk project, supported by Innovate UK.
+
+If you're implementing these specs and need help, [get in touch](mailto:hello@selfe.ai).
