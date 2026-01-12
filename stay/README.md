@@ -192,7 +192,7 @@ stayed      → completed
       }
     },
     
-    "booking_terms_ref": "https://whitelionblakeney.co.uk/.well-known/ucp#booking-terms",
+    "folio_ref": "https://whitelionblakeney.co.uk/.well-known/ucp#folio",
     "mandate_ref": "ap2:mandate:xyz789",
     
     "history": [
@@ -440,5 +440,5 @@ POST /stays/{id}/check-out
 ## Related
 
 - [Venue](/venue): The bookable entity
-- [Booking Terms](/booking-terms): Payment semantics
+- [Folio](/folio): Payment semantics
 - [UCP Integration](/docs/ucp-integration.md): Protocol integration
