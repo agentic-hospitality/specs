@@ -95,11 +95,11 @@ The mechanisms: [DIDs](/trust/identity) for identity, [VCs](/trust/credentials) 
 This isn't a new protocol from scratch. It's an extension layer:
 
 ::card-group{cols=2}
-  ::card{title="A2A (Agent-to-Agent)" icon="ph:plugs-connected" href="https://google.github.io/A2A/"}
+  ::card{title="A2A (Agent-to-Agent)" icon="ph:plugs-connected" href="https://a2a-protocol.org/"}
   Google's standard for agent communication. Defines how agents discover each other and exchange messages.
   ::
 
-  ::card{title="UCP (Universal Commerce Protocol)" icon="ph:shopping-cart" href="https://www.ucprotocol.org/"}
+  ::card{title="UCP (Universal Commerce Protocol)" icon="ph:shopping-cart" href="https://ucp.dev/"}
   The commercial transaction layer. Handles payments, lifecycle, and business logic.
   ::
 ::
