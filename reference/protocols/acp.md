@@ -1,5 +1,6 @@
 ---
 title: Agentic Commerce Protocol (ACP)
+description: How Agentic Booking relates to OpenAI and Stripe's commerce protocol—checkout sessions, payment elements, and hospitality extensions.
 order: 4
 ---
 

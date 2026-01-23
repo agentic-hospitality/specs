@@ -1,9 +1,10 @@
 ---
-title: Stay
+title: Stay Lifecycle
+description: The booking lifecycle state machine—from availability check through hold, confirmation, arrival, and completion with modification and cancellation handling.
 order: 3
 ---
 
-# Stay
+# Stay Lifecycle
 
 The booking lifecycle for hospitality reservations.
 
@@ -32,10 +33,10 @@ REQUEST → AVAILABLE → HELD → BOOKED → CONFIRMED → BALANCED → ARRIVED
 The lifecycle has two types of states:
 
 ::card-group{cols="2"}
-  ::card{title="Primary States"}
+  ::card{title="Primary States" icon="list"}
   Sequential progression from request to completion. Each state has clear entry and exit conditions.
   ::
-  ::card{title="Branch States"}
+  ::card{title="Branch States" icon="git-branch"}
   Modified, cancelled, or no-show. These can occur from multiple points in the primary flow.
   ::
 ::
@@ -45,34 +46,34 @@ The lifecycle has two types of states:
 ## Core Concepts
 
 ::card-group{cols="3"}
-  ::card{title="States" to="/reference/stay/spec#3-states"}
+  ::card{title="States" to="/reference/stay/spec#3-states" icon="list-checks"}
   Defined lifecycle states with clear triggers and transitions.
   ::
-  ::card{title="Transitions" to="/reference/stay/spec#4-transitions"}
+  ::card{title="Transitions" to="/reference/stay/spec#4-transitions" icon="arrow-right"}
   Valid state changes and what triggers them.
   ::
-  ::card{title="Stay Object" to="/reference/stay/spec#5-stay-object"}
+  ::card{title="Stay Object" to="/reference/stay/spec#5-stay-object" icon="file-text"}
   The complete booking record with venue, dates, guests, units, and payment.
   ::
 ::
 
 ::card-group{cols="3"}
-  ::card{title="Holds" to="/reference/stay/spec#6-holds"}
+  ::card{title="Holds" to="/reference/stay/spec#6-holds" icon="clock"}
   Temporary reservations with configurable expiry before booking commitment.
   ::
-  ::card{title="Modifications" to="/reference/stay/spec#7-modifications"}
+  ::card{title="Modifications" to="/reference/stay/spec#7-modifications" icon="pencil"}
   Date changes, room swaps, guest count adjustments with fee handling.
   ::
-  ::card{title="Cancellations" to="/reference/stay/spec#8-cancellations"}
+  ::card{title="Cancellations" to="/reference/stay/spec#8-cancellations" icon="x"}
   Booking cancellation with policy-based refund calculation.
   ::
 ::
 
 ::card-group{cols="2"}
-  ::card{title="Webhooks" to="/reference/stay/spec#10-webhooks"}
+  ::card{title="Webhooks" to="/reference/stay/spec#10-webhooks" icon="webhook"}
   Event notifications for state changes, holds, and modifications.
   ::
-  ::card{title="Transport Bindings" to="/reference/stay/spec#11-transport-bindings"}
+  ::card{title="Transport Bindings" to="/reference/stay/spec#11-transport-bindings" icon="plug"}
   REST and MCP endpoints for booking operations.
   ::
 ::
@@ -142,10 +143,10 @@ Stay tracks these separately because:
 ## Learn More
 
 ::card-group
-  ::card{title="Specification" to="/reference/stay/spec"}
+  ::card{title="Specification" to="/reference/stay/spec" icon="file-code"}
   Full technical specification with state definitions, schemas, and protocol bindings.
   ::
-  ::card{title="Examples" to="/reference/stay/examples"}
+  ::card{title="Examples" to="/reference/stay/examples" icon="code"}
   Working JSON examples for the complete booking lifecycle.
   ::
 ::

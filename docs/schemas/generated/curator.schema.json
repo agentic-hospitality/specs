@@ -1,0 +1,275 @@
+{
+  "$ref": "#/definitions/Curator",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Coordinates": {
+      "additionalProperties": false,
+      "description": "Geographic coordinates",
+      "properties": {
+        "latitude": {
+          "description": "Latitude in decimal degrees",
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "longitude": {
+          "description": "Longitude in decimal degrees",
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "type": "object"
+    },
+    "Curator": {
+      "additionalProperties": false,
+      "description": "Curator - entity that maintains verified venue collections",
+      "properties": {
+        "contact": {
+          "additionalProperties": false,
+          "description": "Contact for disputes/corrections",
+          "properties": {
+            "disputes_url": {
+              "$ref": "#/definitions/URI"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "id": {
+          "description": "Unique identifier",
+          "type": "string"
+        },
+        "jurisdiction": {
+          "$ref": "#/definitions/CuratorJurisdiction",
+          "description": "Geographic or thematic jurisdiction"
+        },
+        "name": {
+          "description": "Display name",
+          "type": "string"
+        },
+        "principles": {
+          "$ref": "#/definitions/URI",
+          "description": "Public commitments"
+        },
+        "type": {
+          "$ref": "#/definitions/CuratorType",
+          "description": "Curator type"
+        },
+        "venues": {
+          "description": "Venues in this curator's collection",
+          "items": {
+            "$ref": "#/definitions/VenueReference"
+          },
+          "type": "array"
+        },
+        "verification_methods": {
+          "description": "How this curator verifies venues",
+          "items": {
+            "$ref": "#/definitions/VerificationMethod"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type",
+        "jurisdiction"
+      ],
+      "type": "object"
+    },
+    "CuratorJurisdiction": {
+      "additionalProperties": false,
+      "description": "Curator's area of authority",
+      "properties": {
+        "geographic": {
+          "additionalProperties": false,
+          "description": "Geographic scope",
+          "properties": {
+            "bounds": {
+              "additionalProperties": false,
+              "description": "Bounding box",
+              "properties": {
+                "ne": {
+                  "$ref": "#/definitions/Coordinates"
+                },
+                "sw": {
+                  "$ref": "#/definitions/Coordinates"
+                }
+              },
+              "required": [
+                "ne",
+                "sw"
+              ],
+              "type": "object"
+            },
+            "countries": {
+              "description": "Country codes",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "regions": {
+              "description": "Region names",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "thematic": {
+          "additionalProperties": false,
+          "description": "Thematic scope",
+          "properties": {
+            "specializations": {
+              "description": "Special focus areas",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "venue_types": {
+              "description": "Venue types covered",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "CuratorType": {
+      "description": "Types of curators",
+      "enum": [
+        "dmo",
+        "portfolio",
+        "editorial",
+        "certification",
+        "aggregator"
+      ],
+      "type": "string"
+    },
+    "ISODateTime": {
+      "description": "ISO 8601 datetime string",
+      "type": "string"
+    },
+    "URI": {
+      "description": "URI reference to another entity",
+      "type": "string"
+    },
+    "VenueReference": {
+      "additionalProperties": false,
+      "description": "Reference to a venue in curator's collection",
+      "properties": {
+        "added_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When this venue was added"
+        },
+        "endorsement": {
+          "additionalProperties": false,
+          "description": "Curator's endorsement level",
+          "properties": {
+            "badges": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "level": {
+              "enum": [
+                "listed",
+                "verified",
+                "recommended",
+                "featured"
+              ],
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "local_id": {
+          "description": "Curator's local identifier for this venue",
+          "type": "string"
+        },
+        "ref": {
+          "$ref": "#/definitions/URI",
+          "description": "URI to venue's agent.json"
+        },
+        "status": {
+          "description": "Verification status",
+          "enum": [
+            "verified",
+            "pending",
+            "suspended"
+          ],
+          "type": "string"
+        },
+        "verified_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When last verified"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "type": "object"
+    },
+    "VerificationMethod": {
+      "additionalProperties": false,
+      "description": "How a curator verifies venue claims",
+      "properties": {
+        "description": {
+          "description": "Description of the process",
+          "type": "string"
+        },
+        "frequency": {
+          "description": "How often re-verification occurs",
+          "enum": [
+            "continuous",
+            "annual",
+            "on_change",
+            "once"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "description": "Method identifier",
+          "type": "string"
+        },
+        "name": {
+          "description": "Human-readable name",
+          "type": "string"
+        },
+        "verifies": {
+          "description": "What this method verifies",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "verifies"
+      ],
+      "type": "object"
+    }
+  }
+}

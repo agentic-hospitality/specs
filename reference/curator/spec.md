@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for authority extensions—coverage, stories, verification, actions, and transparency requirements for DMOs and curators.
 order: 1
 ---
 

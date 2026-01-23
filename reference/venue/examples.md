@@ -1,5 +1,6 @@
 ---
 title: Examples
+description: Working JSON examples for hotels and restaurants—complete venue records, evidence with credentials, conflicting evidence handling.
 order: 2
 ---
 

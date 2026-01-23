@@ -66,15 +66,34 @@ GitHub-readable versions of the Agentic Booking specifications.
 
 ---
 
+## Schemas
+
+TypeScript and JSON Schema definitions for validation and tooling.
+
+```bash
+cd schemas
+npm install
+npm run generate:all
+```
+
+| Schema | TypeScript | JSON Schema |
+|--------|------------|-------------|
+| Venue | [venue.ts](./schemas/venue.ts) | [venue.schema.json](./schemas/generated/venue.schema.json) |
+| Curator | [curator.ts](./schemas/curator.ts) | [curator.schema.json](./schemas/generated/curator.schema.json) |
+| Stay | [stay.ts](./schemas/stay.ts) | [stay.schema.json](./schemas/generated/stay.schema.json) |
+| Folio | [folio.ts](./schemas/folio.ts) | [folio.schema.json](./schemas/generated/folio.schema.json) |
+
+---
+
 ## Status
 
 | Spec | Version | Status |
 |------|---------|--------|
-| Bookable | 0.1.0 | Draft |
-| Venue | 0.1.0 | Draft |
-| Curator | 0.2.0 | Draft |
-| Stay | 0.1.0 | Draft |
-| Folio | 0.1.0 | Draft |
+| Bookable | 1.0.0 | Released |
+| Venue | 1.0.0 | Released |
+| Curator | 1.0.0 | Released |
+| Stay | 1.0.0 | Released |
+| Folio | 1.0.0 | Released |
 
 **License:** MIT
 
@@ -84,4 +103,10 @@ GitHub-readable versions of the Agentic Booking specifications.
 
 Open an issue. Submit a PR. Tell us what's wrong or missing.
 
-[GitHub Issues](https://github.com/AgenticBooking/specs/issues) · [Email](mailto:hello@selfe.ai)
+[GitHub Issues](https://github.com/AgenticBooking/specs/issues) · [Email](mailto:hello@agenticbooking.org)
+
+---
+
+## About
+
+Led by [Selfe](https://selfe.ai) · 20-22 Wenlock Road, London, N1 7GU, UK

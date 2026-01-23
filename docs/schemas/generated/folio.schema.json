@@ -1,0 +1,314 @@
+{
+  "$ref": "#/definitions/Folio",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CancellationPolicy": {
+      "additionalProperties": false,
+      "description": "Cancellation policy with tiered refunds",
+      "properties": {
+        "policy_hash": {
+          "description": "SHA-256 hash of policy JSON for immutability proof",
+          "type": "string"
+        },
+        "tiers": {
+          "description": "Refund tiers",
+          "items": {
+            "$ref": "#/definitions/CancellationTier"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "tiers"
+      ],
+      "type": "object"
+    },
+    "CancellationTier": {
+      "additionalProperties": false,
+      "description": "A cancellation refund tier",
+      "properties": {
+        "days_before": {
+          "description": "Days before check-in (use this OR hours_before)",
+          "minimum": 0,
+          "type": "number"
+        },
+        "hours_before": {
+          "description": "Hours before check-in (for restaurants)",
+          "minimum": 0,
+          "type": "number"
+        },
+        "refund_percent": {
+          "description": "Refund percentage at this tier",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "refund_percent"
+      ],
+      "type": "object"
+    },
+    "Folio": {
+      "additionalProperties": false,
+      "description": "Folio - financial terms of a booking",
+      "properties": {
+        "cancellation_policy": {
+          "$ref": "#/definitions/CancellationPolicy",
+          "description": "Refund terms"
+        },
+        "modification_policy": {
+          "$ref": "#/definitions/ModificationPolicy",
+          "description": "Rules for modifications"
+        },
+        "no_show_policy": {
+          "$ref": "#/definitions/NoShowPolicy",
+          "description": "What happens on no-show"
+        },
+        "payment_schedule": {
+          "description": "When payments are due",
+          "items": {
+            "$ref": "#/definitions/PaymentScheduleItem"
+          },
+          "type": "array"
+        },
+        "stay_dates": {
+          "additionalProperties": false,
+          "description": "Stay dates this folio covers",
+          "properties": {
+            "check_in": {
+              "$ref": "#/definitions/ISODate"
+            },
+            "check_out": {
+              "$ref": "#/definitions/ISODate"
+            }
+          },
+          "required": [
+            "check_in",
+            "check_out"
+          ],
+          "type": "object"
+        },
+        "venue_ref": {
+          "$ref": "#/definitions/URI",
+          "description": "URI to venue's agent.json"
+        }
+      },
+      "required": [
+        "venue_ref",
+        "stay_dates",
+        "payment_schedule",
+        "cancellation_policy"
+      ],
+      "type": "object"
+    },
+    "ISODate": {
+      "description": "ISO 8601 date string (YYYY-MM-DD)",
+      "type": "string"
+    },
+    "ISODateTime": {
+      "description": "ISO 8601 datetime string",
+      "type": "string"
+    },
+    "ModificationPolicy": {
+      "additionalProperties": false,
+      "description": "Modification policy",
+      "properties": {
+        "allowed": {
+          "description": "Whether modifications are allowed",
+          "type": "boolean"
+        },
+        "fee": {
+          "$ref": "#/definitions/Money",
+          "description": "Fee for modifications"
+        },
+        "requires_mandate_amendment_if_increase": {
+          "description": "Whether mandate needs re-signing if total increases",
+          "type": "boolean"
+        },
+        "restrictions": {
+          "description": "Restrictions on modifications",
+          "items": {
+            "$ref": "#/definitions/ModificationRestriction"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "allowed"
+      ],
+      "type": "object"
+    },
+    "ModificationRestriction": {
+      "description": "Modification restrictions",
+      "type": "string"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "description": "Monetary amount with currency",
+      "properties": {
+        "amount": {
+          "description": "Amount in minor units (e.g., pence, cents)",
+          "type": "number"
+        },
+        "currency": {
+          "description": "ISO 4217 currency code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "type": "object"
+    },
+    "NoShowPolicy": {
+      "additionalProperties": false,
+      "description": "No-show policy",
+      "properties": {
+        "charge_percent": {
+          "description": "Percentage of booking to charge on no-show",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "detect_after_hours": {
+          "description": "Hours after check-in time before no-show is detected",
+          "minimum": 0,
+          "type": "number"
+        },
+        "proof_method": {
+          "$ref": "#/definitions/NoShowProofMethod",
+          "description": "How no-show is proven"
+        }
+      },
+      "required": [
+        "charge_percent",
+        "detect_after_hours",
+        "proof_method"
+      ],
+      "type": "object"
+    },
+    "NoShowProofMethod": {
+      "description": "Methods to prove no-show",
+      "enum": [
+        "pms_attestation",
+        "keycard_inactive",
+        "checkin_system_log",
+        "front_desk_declaration"
+      ],
+      "type": "string"
+    },
+    "PaymentDue": {
+      "anyOf": [
+        {
+          "const": "on_booking",
+          "type": "string"
+        },
+        {
+          "const": "on_arrival",
+          "type": "string"
+        },
+        {
+          "const": "on_departure",
+          "type": "string"
+        },
+        {
+          "const": "7_days_before",
+          "type": "string"
+        },
+        {
+          "const": "14_days_before",
+          "type": "string"
+        },
+        {
+          "const": "30_days_before",
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/RelativeDue"
+        },
+        {
+          "$ref": "#/definitions/ISODate"
+        }
+      ],
+      "description": "When a payment is due. Use semantic values or N_days_before pattern (e.g., \"7_days_before\", \"14_days_before\")"
+    },
+    "PaymentItemStatus": {
+      "description": "Payment item status",
+      "enum": [
+        "pending",
+        "captured",
+        "failed",
+        "refunded",
+        "partially_refunded"
+      ],
+      "type": "string"
+    },
+    "PaymentScheduleItem": {
+      "additionalProperties": false,
+      "description": "A scheduled payment",
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/Money",
+          "description": "Amount to charge"
+        },
+        "captured_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When captured"
+        },
+        "due": {
+          "$ref": "#/definitions/PaymentDue",
+          "description": "When payment is due"
+        },
+        "due_date": {
+          "$ref": "#/definitions/ISODate",
+          "description": "Computed due date (for relative dues)"
+        },
+        "note": {
+          "description": "Additional notes",
+          "type": "string"
+        },
+        "refundable": {
+          "description": "Whether this charge is refundable",
+          "type": "boolean"
+        },
+        "status": {
+          "$ref": "#/definitions/PaymentItemStatus",
+          "description": "Current status"
+        },
+        "type": {
+          "$ref": "#/definitions/PaymentType",
+          "description": "Payment type"
+        }
+      },
+      "required": [
+        "type",
+        "amount",
+        "due",
+        "status"
+      ],
+      "type": "object"
+    },
+    "PaymentType": {
+      "description": "Types of payments",
+      "enum": [
+        "verification",
+        "deposit",
+        "balance",
+        "full_payment",
+        "incidentals"
+      ],
+      "type": "string"
+    },
+    "RelativeDue": {
+      "description": "Relative due date pattern",
+      "pattern": "^[0-9]+_days_before$",
+      "type": "string"
+    },
+    "URI": {
+      "description": "URI reference to another entity",
+      "type": "string"
+    }
+  }
+}

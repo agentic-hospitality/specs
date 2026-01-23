@@ -1,0 +1,545 @@
+{
+  "$ref": "#/definitions/Stay",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Actor": {
+      "description": "Actor identifier pattern",
+      "type": "string"
+    },
+    "BookedUnit": {
+      "additionalProperties": false,
+      "description": "Booked unit details",
+      "properties": {
+        "covers": {
+          "description": "For restaurant tables",
+          "type": "number"
+        },
+        "id": {
+          "description": "Unit identifier",
+          "type": "string"
+        },
+        "name": {
+          "description": "Unit name",
+          "type": "string"
+        },
+        "quantity": {
+          "description": "Quantity booked",
+          "type": "number"
+        },
+        "rate": {
+          "additionalProperties": false,
+          "description": "Rate at time of booking",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "per": {
+              "enum": [
+                "night",
+                "hour",
+                "person",
+                "booking"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "per"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "type": "object"
+    },
+    "FieldChange": {
+      "additionalProperties": false,
+      "description": "A single field change",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "from": {},
+        "to": {}
+      },
+      "required": [
+        "field",
+        "from",
+        "to"
+      ],
+      "type": "object"
+    },
+    "GuestInfo": {
+      "additionalProperties": false,
+      "description": "Guest information",
+      "properties": {
+        "adults": {
+          "description": "Number of adults",
+          "minimum": 1,
+          "type": "number"
+        },
+        "children": {
+          "description": "Number of children",
+          "minimum": 0,
+          "type": "number"
+        },
+        "names": {
+          "description": "Guest names",
+          "items": {
+            "$ref": "#/definitions/GuestName"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "adults"
+      ],
+      "type": "object"
+    },
+    "GuestName": {
+      "additionalProperties": false,
+      "description": "Guest name",
+      "properties": {
+        "first": {
+          "type": "string"
+        },
+        "last": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "first",
+        "last"
+      ],
+      "type": "object"
+    },
+    "ISODate": {
+      "description": "ISO 8601 date string (YYYY-MM-DD)",
+      "type": "string"
+    },
+    "ISODateTime": {
+      "description": "ISO 8601 datetime string",
+      "type": "string"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "description": "Monetary amount with currency",
+      "properties": {
+        "amount": {
+          "description": "Amount in minor units (e.g., pence, cents)",
+          "type": "number"
+        },
+        "currency": {
+          "description": "ISO 4217 currency code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "type": "object"
+    },
+    "PaymentStatus": {
+      "description": "Payment status values",
+      "enum": [
+        "pending",
+        "captured",
+        "failed",
+        "refunded"
+      ],
+      "type": "string"
+    },
+    "Stay": {
+      "additionalProperties": false,
+      "description": "Stay - a hospitality booking through its lifecycle",
+      "properties": {
+        "arrival": {
+          "additionalProperties": false,
+          "description": "Arrival/departure details",
+          "properties": {
+            "checked_in_at": {
+              "$ref": "#/definitions/ISODateTime"
+            },
+            "room_assigned": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "cancellation": {
+          "$ref": "#/definitions/StayCancellation",
+          "description": "Cancellation record"
+        },
+        "created_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When created"
+        },
+        "dates": {
+          "$ref": "#/definitions/StayDates",
+          "description": "Booking dates"
+        },
+        "departure": {
+          "additionalProperties": false,
+          "properties": {
+            "checked_out_at": {
+              "$ref": "#/definitions/ISODateTime"
+            }
+          },
+          "type": "object"
+        },
+        "guests": {
+          "$ref": "#/definitions/GuestInfo",
+          "description": "Guest information"
+        },
+        "history": {
+          "description": "Immutable audit trail",
+          "items": {
+            "$ref": "#/definitions/StayHistoryEntry"
+          },
+          "type": "array"
+        },
+        "id": {
+          "description": "Unique identifier",
+          "pattern": "^stay_[a-z0-9]+$",
+          "type": "string"
+        },
+        "modification": {
+          "$ref": "#/definitions/StayModification",
+          "description": "Modification record"
+        },
+        "no_show": {
+          "$ref": "#/definitions/StayNoShow",
+          "description": "No-show record"
+        },
+        "payment": {
+          "$ref": "#/definitions/StayPayment",
+          "description": "Payment information"
+        },
+        "status": {
+          "$ref": "#/definitions/StayStatus",
+          "description": "Current lifecycle state"
+        },
+        "units": {
+          "description": "Booked units",
+          "items": {
+            "$ref": "#/definitions/BookedUnit"
+          },
+          "type": "array"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When last updated"
+        },
+        "venue": {
+          "additionalProperties": false,
+          "description": "Venue being booked",
+          "properties": {
+            "id": {
+              "description": "Venue identifier",
+              "type": "string"
+            },
+            "ref": {
+              "$ref": "#/definitions/URI",
+              "description": "URI to venue's agent.json"
+            },
+            "type": {
+              "description": "Venue type (for restaurants, etc.)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "ref"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "venue",
+        "dates",
+        "guests",
+        "history"
+      ],
+      "type": "object"
+    },
+    "StayCancellation": {
+      "additionalProperties": false,
+      "description": "Record of a cancellation",
+      "properties": {
+        "cancelled_at": {
+          "$ref": "#/definitions/ISODateTime"
+        },
+        "cancelled_by": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Actor"
+            },
+            {
+              "const": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "days_before_check_in": {
+          "type": "number"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "refund": {
+          "additionalProperties": false,
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "percent": {
+              "type": "number"
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "processed",
+                "failed"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "percent",
+            "status"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "cancelled_at",
+        "cancelled_by",
+        "days_before_check_in"
+      ],
+      "type": "object"
+    },
+    "StayDates": {
+      "additionalProperties": false,
+      "description": "Booking date information",
+      "properties": {
+        "check_in": {
+          "$ref": "#/definitions/ISODate",
+          "description": "Check-in date"
+        },
+        "check_out": {
+          "$ref": "#/definitions/ISODate",
+          "description": "Check-out date"
+        },
+        "duration_minutes": {
+          "description": "Duration in minutes (restaurants)",
+          "type": "number"
+        },
+        "nights": {
+          "description": "Number of nights (0 for same-day like restaurants)",
+          "type": "number"
+        },
+        "time": {
+          "description": "Time for same-day bookings (restaurants)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check_in",
+        "check_out",
+        "nights"
+      ],
+      "type": "object"
+    },
+    "StayHistoryEntry": {
+      "additionalProperties": false,
+      "description": "Audit trail entry",
+      "properties": {
+        "actor": {
+          "$ref": "#/definitions/Actor"
+        },
+        "details": {
+          "additionalProperties": {},
+          "type": "object"
+        },
+        "from_status": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/StayStatus"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timestamp": {
+          "$ref": "#/definitions/ISODateTime"
+        },
+        "to_status": {
+          "$ref": "#/definitions/StayStatus"
+        }
+      },
+      "required": [
+        "timestamp",
+        "from_status",
+        "to_status",
+        "actor"
+      ],
+      "type": "object"
+    },
+    "StayModification": {
+      "additionalProperties": false,
+      "description": "Record of a booking modification",
+      "properties": {
+        "changes": {
+          "items": {
+            "$ref": "#/definitions/FieldChange"
+          },
+          "type": "array"
+        },
+        "modified_at": {
+          "$ref": "#/definitions/ISODateTime"
+        },
+        "modified_by": {
+          "$ref": "#/definitions/Actor"
+        },
+        "price_difference": {
+          "$ref": "#/definitions/Money"
+        }
+      },
+      "required": [
+        "modified_at",
+        "modified_by",
+        "changes"
+      ],
+      "type": "object"
+    },
+    "StayNoShow": {
+      "additionalProperties": false,
+      "description": "Record of a no-show",
+      "properties": {
+        "charge": {
+          "additionalProperties": false,
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "percent": {
+              "type": "number"
+            },
+            "status": {
+              "$ref": "#/definitions/PaymentStatus"
+            }
+          },
+          "required": [
+            "amount",
+            "percent",
+            "status"
+          ],
+          "type": "object"
+        },
+        "detected_at": {
+          "$ref": "#/definitions/ISODateTime"
+        },
+        "hours_after_check_in": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "detected_at",
+        "hours_after_check_in"
+      ],
+      "type": "object"
+    },
+    "StayPayment": {
+      "additionalProperties": false,
+      "description": "Payment state within a stay",
+      "properties": {
+        "balance": {
+          "additionalProperties": false,
+          "description": "Balance payment",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "due_date": {
+              "$ref": "#/definitions/ISODate"
+            },
+            "status": {
+              "$ref": "#/definitions/PaymentStatus"
+            }
+          },
+          "required": [
+            "amount",
+            "status"
+          ],
+          "type": "object"
+        },
+        "deposit": {
+          "additionalProperties": false,
+          "description": "Deposit payment",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "captured_at": {
+              "$ref": "#/definitions/ISODateTime"
+            },
+            "note": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/definitions/PaymentStatus"
+            }
+          },
+          "required": [
+            "amount",
+            "status"
+          ],
+          "type": "object"
+        },
+        "total": {
+          "$ref": "#/definitions/Money",
+          "description": "Total amount"
+        }
+      },
+      "required": [
+        "total"
+      ],
+      "type": "object"
+    },
+    "StayStatus": {
+      "description": "Primary stay states",
+      "enum": [
+        "request",
+        "available",
+        "unavailable",
+        "held",
+        "booked",
+        "confirmed",
+        "balanced",
+        "arrived",
+        "stayed",
+        "completed",
+        "modified",
+        "cancelled",
+        "no_show"
+      ],
+      "type": "string"
+    },
+    "URI": {
+      "description": "URI reference to another entity",
+      "type": "string"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 ---
 title: Principles
+description: Public commitments for curators—power, accountability, transparency, attribution, and dispute resolution requirements.
 order: 3
 ---
 

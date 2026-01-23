@@ -1,5 +1,6 @@
 ---
 title: Examples
+description: Working JSON examples for the complete booking lifecycle—availability, holds, confirmations, modifications, and cancellations.
 order: 2
 ---
 

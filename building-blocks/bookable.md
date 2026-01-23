@@ -1,9 +1,10 @@
 ---
-title: Bookable
+title: Bookable Pattern
+description: The base pattern for AI-bookable entities—identity, evidence, fit, actions, presentation, and answers that enable defensible agent recommendations.
 order: 1
 ---
 
-# Bookable
+# Bookable Pattern
 
 The base pattern for anything an AI agent can discover, trust, and transact with.
 
@@ -24,7 +25,7 @@ Bookable is not a protocol—it's a **pattern** that domain-specific extensions 
   Can the agent explain *why* it recommended this? With citations, not vibes.
   ::
 
-  ::card{title="3. Complete the Transaction" icon="check-circle"}
+  ::card{title="3. Complete the Transaction" icon="circle-check"}
   Can it actually make the booking? With proper authentication and error handling.
   ::
 ::
@@ -148,13 +149,13 @@ Pre-computed responses to common questions, linked to evidence for citation.
 ## Why Evidence Matters
 
 ::card-group{cols="2"}
-  ::card{title="Traditional Approach" icon="x-circle"}
+  ::card{title="Traditional Approach" icon="circle-x"}
   Hotel says "dog-friendly". Agent trusts it. Guest arrives with dog to find they're only allowed in one annexe room and banned from the restaurant.
 
   **Result:** Frustrated guest, complaint, refund request.
   ::
 
-  ::card{title="Evidence-Based Approach" icon="check-circle"}
+  ::card{title="Evidence-Based Approach" icon="circle-check"}
   Evidence block shows DMO site visit confirming dogs welcome throughout, Visit Beaconshire accessibility credential, and photos of water bowls in the bar.
 
   **Result:** Agent can cite verifiable sources. Reality matches the claim.
@@ -174,7 +175,7 @@ Most systems only describe what they're good at. Bookable encourages entities to
 This is counterintuitive but powerful:
 
 ::card-group{cols="3"}
-  ::card{title="Prevents Bad Matches" icon="shield-x"}
+  ::card{title="Prevents Bad Matches" icon="shield-off"}
   A romantic adults-only hotel shouldn't be recommended for a family trip—even if it has availability.
   ::
 

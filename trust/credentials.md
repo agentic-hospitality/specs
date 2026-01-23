@@ -1,5 +1,6 @@
 ---
 title: Credentials
+description: Verifiable credentials for hospitality—cryptographic proof of venue certifications and guest identity claims with selective disclosure and user consent.
 order: 3
 ---
 

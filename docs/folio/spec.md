@@ -1,3 +1,8 @@
+---
+title: Folio Specification
+description: Technical specification for payment semantics—schedules, cancellation tiers, no-show policies, modifications, and mandate integration.
+---
+
 # Folio Specification
 
 > **v0.1.0 Draft**

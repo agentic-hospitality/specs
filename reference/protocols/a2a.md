@@ -1,5 +1,6 @@
 ---
 title: Agent-to-Agent Protocol (A2A)
+description: How Agentic Booking uses Google's A2A protocol—agent cards, skills, authentication, and namespace extensions for hospitality.
 order: 1
 ---
 

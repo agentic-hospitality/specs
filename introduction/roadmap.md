@@ -1,5 +1,6 @@
 ---
 title: Roadmap
+description: Current state and future direction of the Agentic Booking specifications.
 order: 3
 ---
 

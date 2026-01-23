@@ -1,0 +1,33 @@
+{
+  "name": "@agentic-booking/schemas",
+  "version": "1.0.0",
+  "description": "TypeScript schemas for Agentic Booking specifications",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "generate": "ts-json-schema-generator --path './index.ts' --type '*' --out './generated/all.schema.json'",
+    "generate:venue": "ts-json-schema-generator --path './venue.ts' --type 'Venue' --out './generated/venue.schema.json'",
+    "generate:curator": "ts-json-schema-generator --path './curator.ts' --type 'Curator' --out './generated/curator.schema.json'",
+    "generate:stay": "ts-json-schema-generator --path './stay.ts' --type 'Stay' --out './generated/stay.schema.json'",
+    "generate:folio": "ts-json-schema-generator --path './folio.ts' --type 'Folio' --out './generated/folio.schema.json'",
+    "generate:all": "npm run generate:venue && npm run generate:curator && npm run generate:stay && npm run generate:folio"
+  },
+  "devDependencies": {
+    "ts-json-schema-generator": "^2.3.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticBooking/specs.git",
+    "directory": "schemas"
+  },
+  "keywords": [
+    "agentic-booking",
+    "hospitality",
+    "ai-agents",
+    "mcp",
+    "booking",
+    "schema"
+  ]
+}

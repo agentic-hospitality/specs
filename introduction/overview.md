@@ -1,5 +1,6 @@
 ---
 title: What is this?
+description: Domain semantics for AI agent discovery and booking in hospitality - extending A2A and UCP protocols.
 order: 1
 ---
 
@@ -37,29 +38,57 @@ A shared vocabulary. Open specs that define:
   ::
 ::
 
-## The five protocols
+## The six building blocks
 
 ::card-group{cols=2}
-  ::card{title="Venue" icon="ph:map-pin" href="/protocols/venue"}
+  ::card{title="Venue" icon="ph:map-pin" href="/building-blocks/venue"}
   What a hospitality venue publishes to be understood by AI agents.
   ::
 
-  ::card{title="Bookable" icon="ph:calendar" href="/protocols/bookable"}
+  ::card{title="Bookable" icon="ph:calendar" href="/building-blocks/bookable"}
   The base pattern for anything that can be reserved.
   ::
 
-  ::card{title="Folio" icon="ph:wallet" href="/protocols/folio"}
+  ::card{title="Folio" icon="ph:wallet" href="/building-blocks/folio"}
   The guest account. Payments, charges, refunds.
   ::
 
-  ::card{title="Stay" icon="ph:bed" href="/protocols/stay"}
+  ::card{title="Stay" icon="ph:bed" href="/building-blocks/stay"}
   The booking lifecycle from request to checkout.
   ::
 
-  ::card{title="Curator" icon="ph:sparkle" href="/protocols/curator"}
+  ::card{title="Curator" icon="ph:sparkle" href="/building-blocks/curator"}
   Discovery and trust. How agents find and verify venues.
   ::
+
+  ::card{title="Connect" icon="ph:plugs-connected" href="/building-blocks/connect"}
+  Real-time integration. How venue systems expose live data.
+  ::
 ::
+
+## The architecture
+
+Three principles shape this design:
+
+::card-group{cols=3}
+  ::card{title="Venues own identity" icon="ph:building"}
+  Every venue controls its own record—hosted on its domain, signed with its keys. [DIDs](/trust/identity) let venues prove who they are without depending on any platform.
+  ::
+
+  ::card{title="Guests own data" icon="ph:wallet"}
+  Booking history, preferences, and credentials belong to the guest. Stored in their wallet, presented with consent, portable across venues and agents.
+  ::
+
+  ::card{title="Curators are transparent" icon="ph:eye"}
+  Who endorsed a venue? Why? [Verifiable Credentials](/trust/credentials) make trust signals cryptographically provable—not hidden algorithms.
+  ::
+::
+
+This isn't decentralisation for ideology. It's for data quality. When venues control their records, they keep them current. When guests own their history, it follows them. When trust is transparent, agents can cite their reasoning.
+
+The mechanisms: [DIDs](/trust/identity) for identity, [VCs](/trust/credentials) for claims, and [Folio](/building-blocks/folio) for portable financial records.
+
+---
 
 ## Built on standards
 
@@ -78,3 +107,16 @@ This isn't a new protocol from scratch. It's an extension layer:
 ::tip
 We add the booking-specific semantics on top. Venue types, booking patterns, trust hierarchies—the vocabulary agents need for hospitality.
 ::
+
+---
+
+## Get involved
+
+This is an open standard. We welcome contributions from venues, technology providers, and anyone building AI agents for hospitality.
+
+- **GitHub**: [AgenticBooking/specs](https://github.com/AgenticBooking/specs)
+- **Contact**: [hello@agenticbooking.org](mailto:hello@agenticbooking.org)
+
+---
+
+Led by [Selfe](https://selfe.ai) · 20-22 Wenlock Road, London, N1 7GU, UK

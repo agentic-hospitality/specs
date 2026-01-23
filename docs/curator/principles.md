@@ -1,3 +1,8 @@
+---
+title: Curator Principles
+description: Public commitments for curators—power, accountability, transparency, attribution, and dispute resolution requirements.
+---
+
 # Curator Principles
 
 Public commitments for those who curate.

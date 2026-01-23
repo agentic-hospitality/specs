@@ -1,5 +1,6 @@
 ---
 title: Agent Payments Protocol (AP2)
+description: How Agentic Booking uses Google's AP2 protocol—cryptographic mandates, payment handlers, and hospitality-specific authorization flows.
 order: 3
 ---
 
@@ -228,6 +229,42 @@ AP2 Mandate    Signed proof user authorized these specific charges
   ▼
 Payment Handler    Stripe, Google Pay, etc. executes the charge
 ```
+
+---
+
+## Implementation Concerns
+
+This specification defines **what** gets authorized (mandate structure) and **how** authorization is verified (signatures, policy hashes). It does not define:
+
+| Concern | Description | Left to Implementation |
+|---------|-------------|------------------------|
+| **Payment method storage** | Where user's card/bank details live | Agent wallet, browser, device |
+| **Mandate approval UI** | How users review and sign mandates | Agent app, browser extension |
+| **User authentication** | How users prove identity to sign | Biometrics, passkeys, passwords |
+| **Key management** | Where signing keys are stored | Secure enclave, HSM, cloud |
+
+### Expected Architecture
+
+A compliant implementation typically requires a **user-side application** (agent wallet, browser extension, or mobile app) that:
+
+1. Stores the user's payment credentials securely
+2. Presents mandate terms for user approval
+3. Signs mandates with the user's cryptographic key
+4. Communicates with payment handlers to execute charges
+
+```
+User App (wallet)          Agent                    Venue
+      │                      │                        │
+      │ ◄─── terms ──────────│◄──── negotiate ────────│
+      │                      │                        │
+      │ ── approve+sign ────►│                        │
+      │                      │                        │
+      │                      │──── signed mandate ───►│
+      │                      │                        │
+      │ ◄──────────────── charge via payment handler ─│
+```
+
+The separation between agent (negotiates) and user app (authorizes) is intentional—users maintain control over what they authorize regardless of which agent they use.
 
 ---
 

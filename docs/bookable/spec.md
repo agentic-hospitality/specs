@@ -1,3 +1,8 @@
+---
+title: Bookable Specification
+description: Technical specification for AI-bookable entities—identity, evidence, fit, actions, presentation, and answers with conformance requirements.
+---
+
 # Bookable Specification
 
 > **v0.1.0 Draft**

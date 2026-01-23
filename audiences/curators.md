@@ -1,5 +1,6 @@
 ---
 title: For Curators
+description: How to become a trusted authority that verifies and endorses hospitality venues for AI agents.
 order: 3
 ---
 
@@ -95,8 +96,8 @@ Curators must be transparent. This is non-negotiable.
   What venues do you already verify? What claims can you legitimately make?
   ::
 
-  ::step{title="Learn the protocol"}
-  Review the [Curator protocol](/protocols/curator) to understand how endorsement works technically.
+  ::step{title="Learn the building block"}
+  Review [Curator](/building-blocks/curator) to understand how endorsement works technically.
   ::
 
   ::step{title="Design your process"}

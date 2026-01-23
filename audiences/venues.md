@@ -1,5 +1,6 @@
 ---
 title: For Venues
+description: What hospitality businesses need to know about being discoverable and bookable by AI agents.
 order: 1
 ---
 
@@ -17,15 +18,15 @@ Guests are starting to use AI agents to book travel. "Find me a dog-friendly hot
 
 ::steps
   ::step{title="Publish structured data"}
-  Not just a website — structured information agents can parse. What you are, what you offer, your policies. This is what the [Venue protocol](/protocols/venue) defines.
+  Not just a website — structured information agents can parse. What you are, what you offer, your policies. This is what [Venue](/building-blocks/venue) defines.
   ::
 
-  ::step{title="Connect availability"}
-  Agents need to check if you have space. API or channel manager integration with real-time availability. This is what [Bookable](/protocols/bookable) enables.
+  ::step{title="Connect your systems"}
+  Agents need live availability—not cached data from yesterday. Direct integration with your PMS means real-time inventory and instant confirmations. See [Connect](/building-blocks/connect).
   ::
 
   ::step{title="Get endorsed"}
-  Agents trust Curators. Being endorsed by your DMO or a respected guide means higher visibility and more confident recommendations. See [Curator](/protocols/curator).
+  Agents trust Curators. Being endorsed by your DMO or a respected guide means higher visibility and more confident recommendations. See [Curator](/building-blocks/curator).
   ::
 ::
 
@@ -87,6 +88,12 @@ Legitimate Curators don't sell endorsements. They endorse based on quality and m
 Agents work from the data published. If your data is accurate and structured, agents will represent you accurately. Bad data in = bad recommendations out.
 ::
 
+::accordion{title="Why is direct connection preferable?"}
+Two reasons. First, agents work in real-time—when a guest asks "do you have a room tonight?", the agent needs an answer now, not from a cache. Direct integration means live data and instant confirmations.
+
+Second, the guest journey doesn't end at booking. With direct connection through [Stay](/building-blocks/stay), the agent can help throughout—room preferences before arrival, charges during the stay, modifications if plans change. The guest's agent becomes a continuous companion, not just a booking tool.
+::
+
 ## Next steps
 
 ::steps
@@ -94,8 +101,8 @@ Agents work from the data published. If your data is accurate and structured, ag
   Review what structured data you currently publish. Is it accurate? Complete? Machine-readable?
   ::
 
-  ::step{title="Check integrations"}
-  Does your booking system support API integration? Talk to your PMS provider.
+  ::step{title="Check your PMS"}
+  Does your property management system support direct API access? Ask your vendor about agent integration—certified systems handle Connect automatically.
   ::
 
   ::step{title="Contact your DMO"}

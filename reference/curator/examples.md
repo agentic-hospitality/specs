@@ -1,5 +1,6 @@
 ---
 title: Examples
+description: Working JSON examples for Curator Agent Cards, regional stories, venue interviews, and verification flows.
 order: 2
 ---
 

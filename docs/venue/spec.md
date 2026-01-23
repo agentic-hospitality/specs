@@ -1,3 +1,8 @@
+---
+title: Venue Specification
+description: Technical specification for hospitality venues—identity, vibe, attributes, evidence, fit, actions, units, and neighbourhood with conformance levels.
+---
+
 # Venue v0.1 Specification
 
 Full technical specification for the Venue hospitality extension.

@@ -1,3 +1,8 @@
+---
+title: Curator Examples
+description: Working JSON examples for Curator Agent Cards, regional stories, venue interviews, and verification flows.
+---
+
 # Curator Examples
 
 Agent Cards, stories, and verification flows.

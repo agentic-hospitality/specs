@@ -1,5 +1,6 @@
 ---
 title: For Enterprise
+description: How large organisations can use open protocols for corporate travel, meeting rooms, and internal booking.
 order: 4
 ---
 

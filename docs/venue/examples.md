@@ -1,3 +1,8 @@
+---
+title: Venue Examples
+description: Working JSON examples for hotels and restaurants—complete venue records, evidence with credentials, conflicting evidence handling.
+---
+
 # Venue Examples
 
 Working examples and complete JSON payloads.

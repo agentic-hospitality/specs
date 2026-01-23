@@ -292,7 +292,13 @@ We're not precious about this. If something doesn't work, say so.
 
 ## About
 
-Questions? [Open an issue](https://github.com/AgenticBooking/specs/issues) or [email us](mailto:hello@selfe.ai).
+These specifications are led by [Selfe](https://selfe.ai), building AI-native hospitality infrastructure.
+
+**Selfe Ltd**
+20-22 Wenlock Road, London, N1 7GU, United Kingdom
+[selfe.ai](https://selfe.ai) · [hello@agenticbooking.org](mailto:hello@agenticbooking.org)
+
+Questions? [Open an issue](https://github.com/AgenticBooking/specs/issues) or email us.
 
 ---
 

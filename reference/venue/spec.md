@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for hospitality venues—identity, vibe, attributes, evidence, fit, actions, units, and neighbourhood with conformance levels.
 order: 1
 ---
 
@@ -29,8 +30,8 @@ Venue provides this information in a machine-readable format that extends A2A Ag
 
 ### 1.2 Scope
 
-::card-group{cols="1"}
-  ::card{title="Venue Defines"}
+::card-group{cols="2"}
+  ::card{title="Venue Defines" icon="check"}
   - **Identity** — Verifiable venue existence
   - **Vibe** — Subjective character, structured for matching
   - **Attributes** — Factual, quantified characteristics
@@ -41,7 +42,7 @@ Venue provides this information in a machine-readable format that extends A2A Ag
   - **Neighbourhood** — Location context
   - **Presentation** — A2UI components for human confirmation
   ::
-  ::card{title="Venue Does NOT Define"}
+  ::card{title="Venue Does NOT Define" icon="x"}
   - Transport protocols (use A2A)
   - Booking request/response schemas (endpoint-specific)
   - Discovery mechanisms (topology-neutral)
@@ -973,10 +974,10 @@ Venue = Hospitality vocabulary within A2A Agent Cards
 ## Related Specifications
 
 ::card-group
-  ::card{title="Bookable" to="/reference/bookable/spec"}
+  ::card{title="Bookable" to="/reference/bookable/spec" icon="file-code"}
   Base pattern that Venue extends. Defines Identity, Evidence, Fit, Actions core.
   ::
-  ::card{title="Stay" to="/reference/stay/spec"}
+  ::card{title="Stay" to="/reference/stay/spec" icon="calendar"}
   Accommodation-specific extension with room types, check-in/out, and overnight policies.
   ::
 ::

@@ -1,3 +1,8 @@
+---
+title: Curator Specification
+description: Technical specification for authority extensions—coverage, stories, verification, actions, and transparency requirements for DMOs and curators.
+---
+
 # Curator Specification
 
 > **v0.2.0 Draft**

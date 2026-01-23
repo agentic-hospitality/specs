@@ -1,5 +1,6 @@
 ---
 title: For DMOs
+description: How destination marketing organisations can become Curators and influence AI agent recommendations.
 order: 2
 ---
 
@@ -76,8 +77,8 @@ Curators must be transparent. This is non-negotiable.
 ## Getting started
 
 ::steps
-  ::step{title="Learn the protocol"}
-  Review the [Curator protocol](/protocols/curator) to understand how endorsement works.
+  ::step{title="Learn the building block"}
+  Review [Curator](/building-blocks/curator) to understand how endorsement works.
   ::
 
   ::step{title="Assess your venues"}

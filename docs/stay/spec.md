@@ -1,3 +1,8 @@
+---
+title: Stay Specification
+description: Technical specification for the booking lifecycle state machine—states, transitions, holds, modifications, cancellations, and webhooks.
+---
+
 # Stay Specification
 
 > **v0.1.0 Draft**

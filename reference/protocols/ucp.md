@@ -1,5 +1,6 @@
 ---
 title: Universal Commerce Protocol (UCP)
+description: How Agentic Booking relates to Google's Universal Commerce Protocol—capability negotiation, transport bindings, and hospitality semantics.
 order: 2
 ---
 

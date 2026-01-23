@@ -1,5 +1,6 @@
 ---
 title: Identity
+description: How venues establish verifiable identity for AI agents - DIDs, domain verification, and business registries.
 order: 1
 ---
 

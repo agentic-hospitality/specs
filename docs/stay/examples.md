@@ -1,3 +1,8 @@
+---
+title: Stay Examples
+description: Working JSON examples for the complete booking lifecycle—availability, holds, confirmations, modifications, and cancellations.
+---
+
 # Stay Examples
 
 Lifecycle flow from request to completion.

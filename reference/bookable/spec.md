@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for AI-bookable entities—identity, evidence, fit, actions, presentation, and answers with conformance requirements.
 order: 1
 ---
 
@@ -34,7 +35,7 @@ Bookable provides this structure in a domain-neutral form.
 ### 1.2 Scope
 
 ::card-group{cols="2"}
-  ::card{title="Bookable Defines"}
+  ::card{title="Bookable Defines" icon="check"}
   - **Identity** — Verifiable existence
   - **Evidence** — Proof supporting claims
   - **Fit** — Explicit intent alignment
@@ -43,7 +44,7 @@ Bookable provides this structure in a domain-neutral form.
   - **Answers** — Quotable explanations
   ::
 
-  ::card{title="Bookable Does NOT Define"}
+  ::card{title="Bookable Does NOT Define" icon="x"}
   - Domain-specific vocabulary (use extensions)
   - Transport protocols (use A2A)
   - Discovery mechanisms (topology-neutral)

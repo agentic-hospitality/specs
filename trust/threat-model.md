@@ -1,5 +1,6 @@
 ---
 title: Threat Model
+description: Security analysis for agentic booking—defences against fake venues, SEO manipulation, review fraud, and bait-and-switch attacks.
 order: 4
 ---
 

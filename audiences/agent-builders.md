@@ -1,5 +1,6 @@
 ---
 title: For Agent Builders
+description: Technical quickstart for developers building AI agents that book hospitality.
 order: 5
 ---
 
@@ -33,15 +34,16 @@ Technical quickstart for developers building AI agents that book hospitality.
   ::
 ::
 
-## The protocol stack
+## The building block stack
 
-| Protocol | Purpose | What you get |
-|----------|---------|--------------|
-| [Curator](/protocols/curator) | Discovery & trust | Find venues, filter by endorsement, weight by reputation |
-| [Venue](/protocols/venue) | Understanding | Profiles, facilities, vibe, pre-composed answers |
-| [Bookable](/protocols/bookable) | Availability | Query dates/slots, pricing, hold inventory |
-| [Stay](/protocols/stay) | Lifecycle | State changes, modifications, webhooks |
-| [Folio](/protocols/folio) | Money | Charges, payments, refunds |
+| Building Block | Purpose | What you get |
+|----------------|---------|--------------|
+| [Curator](/building-blocks/curator) | Discovery & trust | Find venues, filter by endorsement, weight by reputation |
+| [Venue](/building-blocks/venue) | Understanding | Profiles, facilities, vibe, pre-composed answers |
+| [Bookable](/building-blocks/bookable) | Availability | Query dates/slots, pricing, hold inventory |
+| [Connect](/building-blocks/connect) | Integration | Real-time PMS data, live inventory, instant confirmations |
+| [Stay](/building-blocks/stay) | Lifecycle | State changes, modifications, webhooks |
+| [Folio](/building-blocks/folio) | Money | Charges, payments, refunds |
 
 ## Integration patterns
 
@@ -67,12 +69,12 @@ These are agent decisions, not protocol decisions. The specs give you the vocabu
 ## Getting started
 
 ::steps
-  ::step{title="Learn the protocols"}
-  Read the [protocol overviews](/protocols/bookable) to understand concepts and relationships.
+  ::step{title="Learn the building blocks"}
+  Read the [building block overviews](/building-blocks/bookable) to understand concepts and relationships.
   ::
 
   ::step{title="Check the specs"}
-  Review [reference specifications](/reference/venue-spec) for schema details and examples.
+  Review [reference specifications](/reference/venue/spec) for schema details and examples.
   ::
 
   ::step{title="Try the sandbox"}

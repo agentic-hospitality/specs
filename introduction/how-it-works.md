@@ -1,5 +1,6 @@
 ---
 title: How it works
+description: The six building blocks of Agentic Booking - Venue, Bookable, Folio, Stay, Curator, and Connect.
 order: 2
 ---
 
@@ -9,17 +10,18 @@ The architecture of Agentic Booking.
 
 ---
 
-## The five protocols
+## The six building blocks
 
-Agentic Booking defines five interconnected protocols:
+Agentic Booking defines six interconnected building blocks:
 
-| Protocol      | Purpose                                                                                      |
-|---------------|----------------------------------------------------------------------------------------------|
-| **Venue**     | What a hospitality venue publishes to be understood by AI agents. Profile, evidence, facilities, capabilities. |
-| **Bookable**  | The base pattern for anything that can be booked—rooms, tables, tickets, experiences.        |
-| **Folio**     | The guest account. What's owed, what's paid, what happens if plans change.                   |
-| **Stay**      | The booking lifecycle. From request through check-in, during the stay, to checkout.          |
-| **Curator**   | The discovery and trust layer. How agents find venues, and know which to trust.              |
+| Building Block | Purpose                                                                                      |
+|----------------|----------------------------------------------------------------------------------------------|
+| **Venue**      | What a hospitality venue publishes to be understood by AI agents. Profile, evidence, facilities, capabilities. |
+| **Bookable**   | The base pattern for anything that can be booked—rooms, tables, tickets, experiences.        |
+| **Folio**      | The guest account. What's owed, what's paid, what happens if plans change.                   |
+| **Stay**       | The booking lifecycle. From request through check-in, during the stay, to checkout.          |
+| **Curator**    | The discovery and trust layer. How agents find venues, and know which to trust.              |
+| **Connect**    | Real-time integration. How venue systems expose live availability and accept bookings.       |
 
 ## How they fit together
 
@@ -47,7 +49,7 @@ Agentic Booking defines five interconnected protocols:
 
 ## Extension model
 
-Each protocol extends the A2A Agent Card:
+Each building block extends the A2A Agent Card:
 
 ::card-group{cols=2}
   ::card{title="Standard A2A" icon="ph:identification-card"}
@@ -64,6 +66,10 @@ Each protocol extends the A2A Agent Card:
 
   ::card{title="Curator endorsements" icon="ph:seal-check"}
   Trust signals from DMOs, portfolios, and editorial curators.
+  ::
+
+  ::card{title="Connect integration" icon="ph:plugs-connected"}
+  Real-time APIs to the venue's property management system.
   ::
 ::
 

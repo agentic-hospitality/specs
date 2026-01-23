@@ -1,9 +1,10 @@
 ---
-title: Curator
+title: Curator Trust
+description: The discovery and trust layer—DMOs, portfolios, and editorial authorities that verify venue claims and provide regional context for agents.
 order: 5
 ---
 
-# Curator
+# Curator Trust
 
 The discovery and trust layer for agentic booking.
 
@@ -46,22 +47,22 @@ Curator (base)
 ## Core Concepts
 
 ::card-group{cols="3"}
-  ::card{title="Stories" to="/reference/curator/spec#3-stories"}
+  ::card{title="Stories" to="/reference/curator/spec#3-stories" icon="book-open"}
   Narratives that reveal place through people. Not marketing copy—real voices, specific details.
   ::
-  ::card{title="Verification" to="/reference/curator/spec#4-verification"}
+  ::card{title="Verification" to="/reference/curator/spec#4-verification" icon="badge-check"}
   Certification levels and editorial badges that create evidence for venue claims.
   ::
-  ::card{title="Coverage" to="/reference/curator/spec#2-coverage"}
+  ::card{title="Coverage" to="/reference/curator/spec#2-coverage" icon="map"}
   What the Curator knows about—venue counts, geographic bounds, narrative density.
   ::
 ::
 
 ::card-group{cols="2"}
-  ::card{title="Actions" to="/reference/curator/spec#5-actions"}
+  ::card{title="Actions" to="/reference/curator/spec#5-actions" icon="settings"}
   What agents can ask: recommend, answer, getStory, listVenues, verify.
   ::
-  ::card{title="Transparency" to="/reference/curator/spec#6-transparency"}
+  ::card{title="Transparency" to="/reference/curator/spec#6-transparency" icon="eye"}
   Required disclosure of economic relationships and ranking methodology.
   ::
 ::
@@ -137,13 +138,13 @@ This creates natural resistance to spam and fake authorities.
 ## Learn More
 
 ::card-group{cols="3"}
-  ::card{title="Specification" to="/reference/curator/spec"}
+  ::card{title="Specification" to="/reference/curator/spec" icon="file-code"}
   Full technical specification with schema definitions.
   ::
-  ::card{title="Examples" to="/reference/curator/examples"}
+  ::card{title="Examples" to="/reference/curator/examples" icon="code"}
   Working JSON examples for Curator Agent Cards and stories.
   ::
-  ::card{title="Principles" to="/reference/curator/principles"}
+  ::card{title="Principles" to="/reference/curator/principles" icon="scale"}
   Public commitments on power, accountability, and disputes.
   ::
 ::

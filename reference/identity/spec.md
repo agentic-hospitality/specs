@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for decentralized identifiers and verifiable credentials—DIDs, VCs, trust chains, and selective disclosure.
 order: 1
 ---
 

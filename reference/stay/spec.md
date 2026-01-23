@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for the booking lifecycle state machine—states, transitions, holds, modifications, cancellations, and webhooks.
 order: 1
 ---
 

@@ -1,0 +1,861 @@
+{
+  "$ref": "#/definitions/Venue",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AccessibilityFeature": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/CommonAccessibility"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Accessibility feature - use CommonAccessibility values or custom strings"
+    },
+    "AccessibilityInfo": {
+      "additionalProperties": false,
+      "description": "Accessibility information",
+      "properties": {
+        "features": {
+          "items": {
+            "$ref": "#/definitions/AccessibilityFeature"
+          },
+          "type": "array"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "wheelchair_accessible": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "Address": {
+      "additionalProperties": false,
+      "description": "Physical address",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "locality",
+        "country"
+      ],
+      "type": "object"
+    },
+    "Amenity": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/CommonAmenity"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "description": "Amenity - use CommonAmenity values or custom strings"
+    },
+    "BookableCapabilities": {
+      "additionalProperties": false,
+      "description": "What a bookable entity can do",
+      "properties": {
+        "booking_methods": {
+          "description": "Supported booking methods",
+          "items": {
+            "$ref": "#/definitions/BookingMethod"
+          },
+          "type": "array"
+        },
+        "languages": {
+          "description": "Languages supported",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "payment_methods": {
+          "description": "Supported payment methods",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "timezone": {
+          "description": "Timezone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "BookableIdentity": {
+      "additionalProperties": false,
+      "description": "Identity block for discovery and verification",
+      "properties": {
+        "legal_name": {
+          "description": "Registered legal name",
+          "type": "string"
+        },
+        "ref": {
+          "$ref": "#/definitions/URI",
+          "description": "URI to agent.json discovery document"
+        },
+        "registration_number": {
+          "description": "Business registration number",
+          "type": "string"
+        },
+        "tax_id": {
+          "description": "Tax identification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "type": "object"
+    },
+    "BookingMethod": {
+      "additionalProperties": false,
+      "description": "How bookings can be made",
+      "properties": {
+        "endpoint": {
+          "description": "Endpoint or contact for this method",
+          "type": "string"
+        },
+        "preferred": {
+          "description": "Whether this is the preferred method",
+          "type": "boolean"
+        },
+        "type": {
+          "description": "Method type",
+          "enum": [
+            "mcp",
+            "rest",
+            "email",
+            "phone"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "CommonAccessibility": {
+      "description": "Common accessibility features (extensible - custom strings also allowed)",
+      "enum": [
+        "wheelchair_accessible",
+        "step_free_access",
+        "elevator",
+        "accessible_bathroom",
+        "grab_rails",
+        "roll_in_shower",
+        "lowered_sink",
+        "visual_aids",
+        "hearing_loop",
+        "braille_signage",
+        "service_animals_welcome",
+        "accessible_parking"
+      ],
+      "type": "string"
+    },
+    "CommonAmenity": {
+      "description": "Common amenities (extensible - custom strings also allowed) Based on schema.org/LocationFeatureSpecification",
+      "enum": [
+        "wifi",
+        "parking",
+        "air_conditioning",
+        "heating",
+        "tv",
+        "minibar",
+        "safe",
+        "desk",
+        "coffee_maker",
+        "kettle",
+        "iron",
+        "hairdryer",
+        "toiletries",
+        "bathrobe",
+        "slippers",
+        "balcony",
+        "terrace",
+        "sea_view",
+        "garden_view",
+        "pool_access",
+        "gym_access",
+        "spa_access",
+        "room_service",
+        "breakfast_included",
+        "kitchen",
+        "kitchenette",
+        "washer",
+        "dryer"
+      ],
+      "type": "string"
+    },
+    "Contact": {
+      "additionalProperties": false,
+      "description": "Contact information",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Coordinates": {
+      "additionalProperties": false,
+      "description": "Geographic coordinates",
+      "properties": {
+        "latitude": {
+          "description": "Latitude in decimal degrees",
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "longitude": {
+          "description": "Longitude in decimal degrees",
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "type": "object"
+    },
+    "DayHours": {
+      "additionalProperties": false,
+      "description": "Hours for a single day",
+      "properties": {
+        "breaks": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "from",
+              "to"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "close": {
+          "type": "string"
+        },
+        "open": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "open",
+        "close"
+      ],
+      "type": "object"
+    },
+    "DiningInfo": {
+      "additionalProperties": false,
+      "description": "Dining information",
+      "properties": {
+        "cuisine": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "dietary_options": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "meal_periods": {
+          "items": {
+            "enum": [
+              "breakfast",
+              "lunch",
+              "dinner"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "reservation_required": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "EvidenceSource": {
+      "additionalProperties": false,
+      "description": "Evidence source for a claim",
+      "properties": {
+        "captured_at": {
+          "$ref": "#/definitions/ISODateTime",
+          "description": "When captured"
+        },
+        "confidence": {
+          "description": "Confidence level",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "origin": {
+          "description": "Where the evidence came from",
+          "type": "string"
+        },
+        "type": {
+          "description": "Source type",
+          "enum": [
+            "third_party",
+            "human_observation",
+            "self_report",
+            "curator_certification",
+            "derived"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "EvidencedClaim<AccessibilityInfo>": {
+      "additionalProperties": false,
+      "description": "A claim with its evidence source",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/AccessibilityInfo",
+          "description": "The claim data"
+        },
+        "source": {
+          "$ref": "#/definitions/EvidenceSource",
+          "description": "Evidence supporting this claim"
+        }
+      },
+      "required": [
+        "data",
+        "source"
+      ],
+      "type": "object"
+    },
+    "EvidencedClaim<DiningInfo>": {
+      "additionalProperties": false,
+      "description": "A claim with its evidence source",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/DiningInfo",
+          "description": "The claim data"
+        },
+        "source": {
+          "$ref": "#/definitions/EvidenceSource",
+          "description": "Evidence supporting this claim"
+        }
+      },
+      "required": [
+        "data",
+        "source"
+      ],
+      "type": "object"
+    },
+    "EvidencedClaim<PetPolicy>": {
+      "additionalProperties": false,
+      "description": "A claim with its evidence source",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/PetPolicy",
+          "description": "The claim data"
+        },
+        "source": {
+          "$ref": "#/definitions/EvidenceSource",
+          "description": "Evidence supporting this claim"
+        }
+      },
+      "required": [
+        "data",
+        "source"
+      ],
+      "type": "object"
+    },
+    "EvidencedClaim<VibeInfo>": {
+      "additionalProperties": false,
+      "description": "A claim with its evidence source",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/VibeInfo",
+          "description": "The claim data"
+        },
+        "source": {
+          "$ref": "#/definitions/EvidenceSource",
+          "description": "Evidence supporting this claim"
+        }
+      },
+      "required": [
+        "data",
+        "source"
+      ],
+      "type": "object"
+    },
+    "Facility": {
+      "additionalProperties": false,
+      "description": "Facility available at venue level",
+      "properties": {
+        "category": {
+          "description": "Category",
+          "enum": [
+            "dining",
+            "wellness",
+            "business",
+            "leisure",
+            "accessibility",
+            "parking"
+          ],
+          "type": "string"
+        },
+        "charge": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Money"
+            },
+            {
+              "const": "included",
+              "type": "string"
+            },
+            {
+              "const": "on_request",
+              "type": "string"
+            }
+          ],
+          "description": "Additional charge"
+        },
+        "description": {
+          "description": "Description",
+          "type": "string"
+        },
+        "id": {
+          "description": "Facility identifier",
+          "type": "string"
+        },
+        "name": {
+          "description": "Display name",
+          "type": "string"
+        },
+        "requires_booking": {
+          "description": "Whether advance booking required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "category"
+      ],
+      "type": "object"
+    },
+    "ISODate": {
+      "description": "ISO 8601 date string (YYYY-MM-DD)",
+      "type": "string"
+    },
+    "ISODateTime": {
+      "description": "ISO 8601 datetime string",
+      "type": "string"
+    },
+    "MediaItem": {
+      "additionalProperties": false,
+      "description": "Media item",
+      "properties": {
+        "alt": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "image",
+            "video"
+          ],
+          "type": "string"
+        },
+        "url": {
+          "$ref": "#/definitions/URI"
+        }
+      },
+      "required": [
+        "url",
+        "type"
+      ],
+      "type": "object"
+    },
+    "Money": {
+      "additionalProperties": false,
+      "description": "Monetary amount with currency",
+      "properties": {
+        "amount": {
+          "description": "Amount in minor units (e.g., pence, cents)",
+          "type": "number"
+        },
+        "currency": {
+          "description": "ISO 4217 currency code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "type": "object"
+    },
+    "OperatingHours": {
+      "additionalProperties": false,
+      "description": "Operating hours",
+      "properties": {
+        "exceptions": {
+          "description": "Special dates",
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "closed": {
+                "type": "boolean"
+              },
+              "date": {
+                "$ref": "#/definitions/ISODate"
+              },
+              "hours": {
+                "$ref": "#/definitions/DayHours"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "date"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "regular": {
+          "additionalProperties": {
+            "$ref": "#/definitions/DayHours"
+          },
+          "description": "Default hours by day",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "PetPolicy": {
+      "additionalProperties": false,
+      "description": "Pet policy details",
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "fee": {
+          "$ref": "#/definitions/Money"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "restrictions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "allowed"
+      ],
+      "type": "object"
+    },
+    "URI": {
+      "description": "URI reference to another entity",
+      "type": "string"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "description": "Bookable unit within a venue",
+      "properties": {
+        "accessibility": {
+          "description": "Accessibility features (use CommonAccessibility values or custom strings)",
+          "items": {
+            "$ref": "#/definitions/AccessibilityFeature"
+          },
+          "type": "array"
+        },
+        "amenities": {
+          "description": "Unit-specific amenities (use CommonAmenity values or custom strings)",
+          "items": {
+            "$ref": "#/definitions/Amenity"
+          },
+          "type": "array"
+        },
+        "capacity": {
+          "additionalProperties": false,
+          "description": "Maximum occupancy",
+          "properties": {
+            "max": {
+              "description": "Maximum occupancy",
+              "minimum": 1,
+              "type": "number"
+            },
+            "min": {
+              "description": "Minimum occupancy",
+              "minimum": 1,
+              "type": "number"
+            }
+          },
+          "required": [
+            "max"
+          ],
+          "type": "object"
+        },
+        "description": {
+          "description": "Description",
+          "type": "string"
+        },
+        "id": {
+          "description": "Unique identifier within venue",
+          "type": "string"
+        },
+        "images": {
+          "description": "Media",
+          "items": {
+            "$ref": "#/definitions/MediaItem"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "Display name",
+          "type": "string"
+        },
+        "rate": {
+          "additionalProperties": false,
+          "description": "Pricing",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Money"
+            },
+            "per": {
+              "enum": [
+                "night",
+                "hour",
+                "person",
+                "booking"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "per"
+          ],
+          "type": "object"
+        },
+        "type": {
+          "description": "Unit type",
+          "enum": [
+            "room",
+            "table",
+            "space",
+            "seat"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type"
+      ],
+      "type": "object"
+    },
+    "Venue": {
+      "additionalProperties": false,
+      "description": "Hospitality venue - hotel, restaurant, or bar",
+      "properties": {
+        "capabilities": {
+          "$ref": "#/definitions/BookableCapabilities",
+          "description": "What this entity offers"
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact",
+          "description": "Contact information"
+        },
+        "evidence": {
+          "$ref": "#/definitions/VenueEvidence",
+          "description": "Evidence-backed claims"
+        },
+        "facilities": {
+          "description": "Venue-level facilities",
+          "items": {
+            "$ref": "#/definitions/Facility"
+          },
+          "type": "array"
+        },
+        "hours": {
+          "$ref": "#/definitions/OperatingHours",
+          "description": "Operating hours"
+        },
+        "id": {
+          "description": "Unique identifier",
+          "type": "string"
+        },
+        "identity": {
+          "$ref": "#/definitions/BookableIdentity",
+          "description": "Canonical identity reference"
+        },
+        "location": {
+          "$ref": "#/definitions/VenueLocation",
+          "description": "Physical location"
+        },
+        "name": {
+          "description": "Human-readable name",
+          "type": "string"
+        },
+        "type": {
+          "description": "Entity type",
+          "enum": [
+            "hotel",
+            "restaurant",
+            "bar",
+            "pub",
+            "cafe"
+          ],
+          "type": "string"
+        },
+        "units": {
+          "description": "Bookable units (rooms, tables, etc.)",
+          "items": {
+            "$ref": "#/definitions/Unit"
+          },
+          "type": "array"
+        },
+        "weak_fit": {
+          "description": "What this venue is NOT good for",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "identity",
+        "location",
+        "name",
+        "type"
+      ],
+      "type": "object"
+    },
+    "VenueEvidence": {
+      "additionalProperties": false,
+      "description": "Evidence-backed claims about venue",
+      "properties": {
+        "accessibility": {
+          "$ref": "#/definitions/EvidencedClaim%3CAccessibilityInfo%3E",
+          "description": "Accessibility with evidence"
+        },
+        "dining": {
+          "$ref": "#/definitions/EvidencedClaim%3CDiningInfo%3E",
+          "description": "Dining options with evidence"
+        },
+        "pets": {
+          "$ref": "#/definitions/EvidencedClaim%3CPetPolicy%3E",
+          "description": "Pet policy with evidence"
+        },
+        "vibe": {
+          "$ref": "#/definitions/EvidencedClaim%3CVibeInfo%3E",
+          "description": "Atmosphere/vibe with evidence"
+        }
+      },
+      "type": "object"
+    },
+    "VenueLocation": {
+      "additionalProperties": false,
+      "description": "Venue location details",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "coordinates": {
+          "$ref": "#/definitions/Coordinates"
+        },
+        "directions": {
+          "description": "Directions or access notes",
+          "type": "string"
+        },
+        "what3words": {
+          "description": "What3Words address",
+          "type": "string"
+        }
+      },
+      "required": [
+        "address"
+      ],
+      "type": "object"
+    },
+    "VibeInfo": {
+      "additionalProperties": false,
+      "description": "Vibe/atmosphere information",
+      "properties": {
+        "ambiance": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "dress_code": {
+          "type": "string"
+        },
+        "good_for": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "noise_level": {
+          "enum": [
+            "quiet",
+            "moderate",
+            "lively"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

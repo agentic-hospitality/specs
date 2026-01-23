@@ -1,120 +1,104 @@
-# Homepage Content - AgenticBooking Specs
+# Homepage Content - Agentic Booking Specs
 # Edit this file to update the landing page
 
 meta:
-  title: "A2A Specs | Open Standards for Agentic Booking"
-  description: "Open specifications for AI agents in hospitality - enabling seamless communication between booking systems, venues, and traveler agents."
+  title: "Open Standards for AI Agentic Booking"
+  description: "Open standards that give AI agents a common language for discovering, trusting, and booking hotels, restaurants, and experiences."
 
 hero:
   title: "Open Standards for Agentic Booking"
-  subtitle: "From the creators of AgenticBooking, A2A Specs provides the open protocols that enable AI agents to seamlessly book hotels, restaurants, and experiences on behalf of travelers."
+  subtitle: "Giving AI agents a common language for discovering, trusting, and booking hotels, restaurants, and experiences."
   cta:
     primary:
-      label: "Get Started"
-      href: "/docs"
+      label: "Read the Docs"
+      href: "/introduction/overview"
     secondary:
-      label: "npm i @a2a/sdk"
-      copyable: true
+      label: "View on GitHub"
+      href: "https://github.com/AgenticBooking/specs"
 
   trustedBy:
-    title: "Built for the future of travel"
+    title: "Building the future of Agent to Agent hospitality"
     logos:
       - name: "Hotels"
-        icon: "ph:buildings"
+        icon: "building-2"
       - name: "Restaurants"
-        icon: "ph:fork-knife"
+        icon: "utensils"
       - name: "Experiences"
-        icon: "ph:compass"
-      - name: "Airlines"
-        icon: "ph:airplane"
-      - name: "Agents"
-        icon: "ph:robot"
+        icon: "compass"
+      - name: "Destinations"
+        icon: "map"
+      - name: "AI Agents"
+        icon: "bot"
       - name: "Platforms"
-        icon: "ph:devices"
+        icon: "database"
 
 features:
-  - title: "Bookable Protocol"
-    description: "Standard format for representing bookable inventory - rooms, tables, tickets, and more. Machine-readable availability and pricing."
-    icon: "ph:calendar-check"
-    href: "/bookable"
+  - title: "Building Blocks"
+    description: "Six patterns that work together, from describing what's bookable to verifying who's trustworthy."
+    icon: "box"
+    href: "/building-blocks/bookable"
 
-  - title: "Venue Protocol"
-    description: "Rich venue profiles with evidence-based attributes. AI agents understand ambiance, accessibility, and amenities."
-    icon: "ph:map-pin"
-    href: "/venue"
+  - title: "Audiences"
+    description: "Guides for hotels, restaurants, destination marketers, and developers building AI agents."
+    icon: "users"
+    href: "/audiences/venues"
 
-  - title: "Curator Protocol"
-    description: "Recommendation engine interfaces. Connect AI agents to personalized suggestion systems."
-    icon: "ph:sparkle"
-    href: "/curator"
-
-  - title: "Folio Protocol"
-    description: "Traveler preference profiles. Portable identity that agents use to make perfect matches."
-    icon: "ph:user-circle"
-    href: "/folio"
+  - title: "Reference"
+    description: "Complete specifications, schemas, and examples for each building block."
+    icon: "book-open"
+    href: "/reference/bookable/spec"
 
 faqs:
-  - question: "What are A2A Specs?"
-    answer: "A2A (Agent-to-Agent) Specs are open standards that define how AI agents communicate with hospitality systems. They enable any AI assistant to book hotels, reserve tables, or plan experiences using a common language."
+  - question: "What's changing about how people book travel?"
+    answer: "People are starting to ask AI assistants to plan trips instead of searching websites. 'Find me a quiet hotel near the conference center that allows dogs', and the agent handles it. This changes how venues need to be discovered."
 
-  - question: "How do I implement A2A in my system?"
-    answer: "Start with our SDK (`npm i @a2a/sdk`) which provides TypeScript types and validation. Then expose your inventory using the Bookable protocol and your venue data using the Venue protocol."
+  - question: "Will my property still be found?"
+    answer: "Not automatically. AI agents can't read your website the way Google does. They need structured data: what rooms you have, what makes you special, whether you're available. These specs define that structure so agents can find and understand you."
 
-  - question: "Is A2A compatible with existing booking systems?"
-    answer: "Yes! A2A is designed as a layer on top of existing systems. You can gradually adopt protocols - start with read-only Venue data, then add Bookable inventory when ready."
+  - question: "What about my existing booking system?"
+    answer: "You keep it. These specs define how AI agents connect to your property management system to check real-time availability and make bookings. It's a new channel, not a replacement for what you have."
 
-  - question: "What about security and payments?"
-    answer: "A2A focuses on discovery and availability. Actual transactions flow through your existing secure payment rails. The specs include authentication patterns for agent verification."
+  - question: "How do agents know they can trust a venue?"
+    answer: "The same way you do: through who vouches for them. Tourism boards, hotel groups, and certification bodies can endorse venues in ways agents can verify. Real recommendations, not just star ratings."
 
-  - question: "Can I contribute to the specs?"
-    answer: "Absolutely! A2A is open source and community-driven. Join our GitHub discussions, propose RFC changes, or help improve documentation."
+  - question: "Is this just for hotels?"
+    answer: "No. The specs work for anything bookable: restaurants, spas, tours, experiences, event spaces. If it has availability and can be reserved, it fits."
+
+  - question: "What about OTAs and existing distribution?"
+    answer: "This isn't about replacing your existing channels. It's about being ready for a new one. When travelers start booking through AI agents, you want to be discoverable."
+
+  - question: "Do I need to be technical?"
+    answer: "Venues don't need to read specs. Your technology provider or property management system will handle the implementation. The documentation is there so they know what to build."
+
+  - question: "Who's building this?"
+    answer: "It's an open standard. The specs are on GitHub. Anyone can read them, propose changes, or help improve the documentation. We're building this together."
 
 cta:
   title: "Ready to enable agentic booking?"
-  description: "Join the growing ecosystem of hotels, restaurants, and platforms building the future of AI-powered travel."
+  description: "Join the growing ecosystem of hotels, restaurants, and platforms building the future of Agent to Agent hospitality."
   buttons:
-    - label: "Read the Docs"
-      href: "/docs"
+    - label: "Get Started"
+      href: "/introduction/overview"
       primary: true
     - label: "View on GitHub"
-      href: "https://github.com/agenticbooking/specs"
+      href: "https://github.com/AgenticBooking/specs"
       primary: false
 
 footer:
   links:
-    - title: "Protocols"
+    - title: "Docs"
       items:
-        - label: "Bookable"
-          href: "/bookable"
-        - label: "Venue"
-          href: "/venue"
-        - label: "Curator"
-          href: "/curator"
-        - label: "Folio"
-          href: "/folio"
-        - label: "Stay"
-          href: "/stay"
-
-    - title: "Resources"
-      items:
-        - label: "Documentation"
-          href: "/docs"
-        - label: "Examples"
-          href: "/docs/examples"
-        - label: "SDK Reference"
-          href: "/docs/sdk"
-        - label: "Changelog"
-          href: "/docs/changelog"
-
+        - label: "Building Blocks"
+          href: "/building-blocks/bookable"
+        - label: "Audiences"
+          href: "/audiences/venues"
+        - label: "Reference"
+          href: "/reference/bookable/spec"
     - title: "Community"
       items:
         - label: "GitHub"
-          href: "https://github.com/agenticbooking/specs"
-        - label: "Discord"
-          href: "#"
-        - label: "Twitter"
-          href: "#"
-        - label: "Blog"
-          href: "#"
+          href: "https://github.com/AgenticBooking/specs"
+        - label: "Contact"
+          href: "mailto:hello@agenticbooking.org"
 
-  copyright: "AgenticBooking Specs"
+  copyright: "Agentic Booking"

@@ -1,5 +1,6 @@
 ---
 title: Evidence
+description: How claims are backed by proof - evidence nodes, provenance, and confidence scoring.
 order: 2
 ---
 

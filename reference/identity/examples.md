@@ -1,5 +1,6 @@
 ---
 title: Examples
+description: Working JSON examples for DID documents, verifiable credentials, loyalty credentials, and trust chain verification.
 order: 2
 ---
 

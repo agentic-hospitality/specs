@@ -1,3 +1,8 @@
+---
+title: Folio Examples
+description: Working JSON examples for payment schedules, cancellation scenarios, no-show handling, modifications, and restaurant bookings.
+---
+
 # Folio Examples
 
 Payment schedules, cancellation policies, and complete booking examples.

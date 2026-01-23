@@ -1,9 +1,10 @@
 ---
-title: Venue
+title: Venue Extension
+description: The hospitality extension for physical locations—hotels, restaurants, bars with vibe, attributes, units, and neighbourhood context for AI discovery.
 order: 2
 ---
 
-# Venue
+# Venue Extension
 
 The hospitality extension for describing physical locations where bookings take place.
 
@@ -26,34 +27,34 @@ Venue does not define a new protocol. It defines a structured vocabulary within 
 Venue extends the Bookable base pattern with additional blocks specific to physical hospitality establishments.
 
 ::card-group{cols="3"}
-  ::card{title="Identity" to="/reference/venue/spec#3-identity"}
+  ::card{title="Identity" to="/reference/venue/spec#3-identity" icon="id-card"}
   Verifiable existence: name, location, coordinates, domain ownership, and company registration.
   ::
-  ::card{title="Vibe" to="/reference/venue/spec#4-vibe"}
+  ::card{title="Vibe" to="/reference/venue/spec#4-vibe" icon="sparkles"}
   Subjective character structured for matching: essence, atmosphere, energy, formality.
   ::
-  ::card{title="Attributes" to="/reference/venue/spec#5-attributes"}
+  ::card{title="Attributes" to="/reference/venue/spec#5-attributes" icon="clipboard-list"}
   Factual, quantified characteristics: rooms, facilities, accessibility, policies.
   ::
 ::
 
 ::card-group{cols="3"}
-  ::card{title="Evidence" to="/reference/venue/spec#6-evidence"}
+  ::card{title="Evidence" to="/reference/venue/spec#6-evidence" icon="badge-check"}
   Proof supporting claims with provenance, verification status, and confidence scores.
   ::
-  ::card{title="Fit" to="/reference/venue/spec#7-fit"}
+  ::card{title="Fit" to="/reference/venue/spec#7-fit" icon="target"}
   Explicit intent alignment—what the venue is good for, and critically, what it is not.
   ::
-  ::card{title="Units" to="/reference/venue/spec#9-units"}
+  ::card{title="Units" to="/reference/venue/spec#9-units" icon="bed"}
   Bookable sub-entities: rooms, tables, areas. Each inherits from venue level.
   ::
 ::
 
 ::card-group{cols="2"}
-  ::card{title="Neighbourhood" to="/reference/venue/spec#10-neighbourhood"}
+  ::card{title="Neighbourhood" to="/reference/venue/spec#10-neighbourhood" icon="map-pin"}
   Location context beyond coordinates: setting, walkability, proximity to points of interest.
   ::
-  ::card{title="Presentation" to="/reference/venue/spec#11-presentation"}
+  ::card{title="Presentation" to="/reference/venue/spec#11-presentation" icon="layout-template"}
   A2UI components for human-in-the-loop confirmation when agents present options.
   ::
 ::
@@ -142,10 +143,10 @@ A venue declaring `fit.weak: nightlife` signals to agents not to recommend it fo
 ## Learn More
 
 ::card-group
-  ::card{title="Specification" to="/reference/venue/spec"}
+  ::card{title="Specification" to="/reference/venue/spec" icon="file-code"}
   Full technical specification with all field definitions and requirements.
   ::
-  ::card{title="Examples" to="/reference/venue/examples"}
+  ::card{title="Examples" to="/reference/venue/examples" icon="code"}
   Working JSON examples and complete venue payloads.
   ::
 ::

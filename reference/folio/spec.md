@@ -1,5 +1,6 @@
 ---
-title: Spec
+title: Specification
+description: Technical specification for payment semantics—schedules, cancellation tiers, no-show policies, modifications, and mandate integration.
 order: 1
 ---
 
