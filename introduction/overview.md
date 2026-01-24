@@ -10,7 +10,7 @@ Domain semantics for AI agent discovery and booking in hospitality.
 
 ---
 
-Agentic Booking extends [A2A (Agent-to-Agent)](https://google.github.io/A2A/) and [UCP (Universal Commerce Protocol)](https://www.ucprotocol.org/) for the hospitality vertical. It defines what AI agents need to understand and book places to eat, drink, stay, and play.
+Agentic Booking extends [A2A (Agent-to-Agent)](https://a2a-protocol.org/) and [UCP (Universal Commerce Protocol)](https://ucp.dev/) for the hospitality vertical. It defines what AI agents need to understand and book places to eat, drink, stay, and play.
 
 ## The problem
 
