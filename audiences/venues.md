@@ -81,7 +81,7 @@ AI agents are a new channel, not necessarily a replacement. They may book throug
 ::
 
 ::accordion{title="Do I need to pay for endorsement?"}
-Legitimate Curators don't sell endorsements. They endorse based on quality and must declare any commercial relationships. If someone's selling "premium placement," they're not following the Curator manifesto.
+DMOs may charge membership fees that include identity services (like issuing your DID) — that's normal association membership. What Curators *can't* do is sell endorsements themselves. They endorse based on quality, not payment. If someone's offering "premium placement" in exchange for fees, that's pay-to-play advertising, not curation.
 ::
 
 ::accordion{title="What if an agent gets it wrong?"}
